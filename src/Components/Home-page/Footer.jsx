@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './Footer.module.css'
-import { Mail, Phone, Linkedin, Github, MessageCircle } from "lucide-react";
+import { Mail, Phone, MessageCircle } from "lucide-react";
 
 export const Footer = () => {
   return (
@@ -27,8 +27,3 @@ export const Footer = () => {
   )
 }
 
-function ImageSize({src, alt, width, height}) {
-  return (<img src={src} alt={alt} 
-    width={width} height={height}
-    className={styles.image} />)
-}

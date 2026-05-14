@@ -32,7 +32,7 @@ export const ExperienceContainer = () => {
 
   useEffect(() => {
     loadExperiences();
-  }, []);
+  },);
 
   const loadExperiences = async () => {
     try {
@@ -343,7 +343,10 @@ const BasicInfo = ({ selected, handleChange, handleLogoUpload }) => {
       <div className={styles.row}>
         <div className={styles.imageBox}>
           <h3 style={{ color: "white", fontSize: "12px" }}>Company Logo</h3>
-          <img src={BASE + selected.logo} />
+          <img
+              src={selected.logo ? BASE + selected.logo : "https://placehold.co/120x120"}
+              alt="Logo Here"
+            />
           <input
             type="file"
             accept="image/*"

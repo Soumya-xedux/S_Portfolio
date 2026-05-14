@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, { useContext} from 'react'
 import styles from './SideBar.module.css'
 import { PortfolioContext } from '../../context/context'
 
