@@ -8,6 +8,7 @@ import { ProtectedRoute } from "./Components/ProtectedRoute";
 const Home = lazy(() => import("./Pages/Home"));
 const Admin = lazy(() => import("./Pages/Admin"));
 const ProjectDetailsPage = lazy(() => import("./Pages/ProjectDetailsPage"));
+//to-dos
 
 function App() {
   return (
