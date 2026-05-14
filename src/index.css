@@ -5,7 +5,12 @@
 * {
   box-sizing: border-box;
 }
-html, body, #root {
+body {
+  overflow-x: hidden;
+}
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
 }
@@ -33,32 +38,42 @@ html, body, #root {
 }
 
 .sidebar {
-  grid-row: span 5 / span 5;
+  grid-column-start: 1;
 
+  grid-row: span 5 / span 5;
   grid-row-start: 2;
-  border-radius: 1rem 1rem 1rem 1rem;
+
+  border-radius: 1rem;
   border: 2px solid transparent;
   background-image:
-    linear-gradient(#000000cc, #000000cc), 
+    linear-gradient(#000000cc, #000000cc),
     linear-gradient(90deg, #00f5ff, #ff4ecd);
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
 
 .content {
-    box-sizing: border-box;
+  grid-column-start: 2;
   grid-column: span 4 / span 4;
+
   grid-row: span 5 / span 5;
   grid-row-start: 2;
-  border-radius: 1rem 1rem 1rem 1rem;
+
+  box-sizing: border-box;
+
+  border-radius: 1rem;
   height: 100%;
   width: 100%;
+
   border: 2px solid transparent;
+
   background-image:
-    linear-gradient(#000000cc, #000000cc), 
+    linear-gradient(#000000cc, #000000cc),
     linear-gradient(90deg, #00f5ff, #ff4ecd);
+
   background-origin: border-box;
   background-clip: padding-box, border-box;
+
   padding: 20px;
 }
 
