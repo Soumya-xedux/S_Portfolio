@@ -1,0 +1,14 @@
+.problem {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #ff4ecd;
+}
+
+.problemTitle {
+  color: #ff4ecd;
+  margin-bottom: 10px;
+}
+
+.problemText {
+  opacity: 0.85;
+}

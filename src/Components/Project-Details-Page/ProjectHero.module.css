@@ -1,0 +1,64 @@
+.hero {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  border: 2px solid transparent;
+  background-image:
+    linear-gradient(#02121f, #02121f),
+    linear-gradient(90deg, #00f5ff, #ff4ecd);
+  background-clip: padding-box,  border-box;
+}
+
+.heroImage {
+  width: 30%;
+  flex: 2;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.heroContent {
+  flex: 3;
+  position: relative;
+}
+
+.heroStatus {
+  color: #00f5ff;
+  font-size: 14px;
+}
+
+.heroTitle {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.heroDescription {
+  opacity: 0.8;
+  margin: 10px 0;
+}
+
+.heroButtons {
+  position: absolute;
+  display: flex;
+  width: 80%;
+  gap: 10px;
+  bottom: 10px;
+}
+
+.liveLink{
+    flex: 1;
+    border: 1px solid #00f5ff;
+    color: #00f5ff;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.githubLink{
+    flex: 1;
+    border: 1px solid #ff4ecd;
+    color: #ff4ecd;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}

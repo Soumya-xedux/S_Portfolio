@@ -1,0 +1,32 @@
+.challenges {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #ff4ecd;
+}
+
+.challengesTitle {
+  color: #ff4ecd;
+  margin-bottom: 10px;
+}
+
+.challengesGrid {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.challengeCard {
+  flex: 1;
+  min-width: 250px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+}
+
+.challengeText {
+  color: #ff4ecd;
+}
+
+.solutionText {
+  color: #00f5ff;
+}

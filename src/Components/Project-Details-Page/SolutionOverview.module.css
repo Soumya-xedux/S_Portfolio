@@ -1,0 +1,10 @@
+.solution {
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid #00f5ff;
+}
+
+.solutionTitle {
+  color: #00f5ff;
+  margin-bottom: 10px;
+}

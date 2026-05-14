@@ -1,0 +1,49 @@
+.sidebar {
+  width: 220px;
+  padding: 20px;
+  background: #0b1702;
+  border-right: 1px solid #00f5ff55;
+  position: relative;
+}
+
+.title {
+  color: #00f5ff;
+  margin-bottom: 20px;
+}
+
+.item {
+  margin: 6px 0;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.buttons{
+    border-radius: 8px;
+    padding: 12px;
+    height: 100%;
+    width: 100%;
+    text-align: left;
+}
+
+.active{
+    background-color: #00f5ff99;
+    color: white;
+    font-weight: 400;
+}
+
+.item:hover:not(.active) {
+  /* background: linear-gradient(90deg,#00f5ff33,#ff4ecd33); */
+  border:1px solid #00f5ff
+}
+
+.logout{
+    position: absolute;
+    background-color: red;
+    border-radius: 0.5rem;
+    text-align: center;
+    height: 2.5rem;
+    width: 5rem;
+    padding: 0.5rem;
+    font-weight: 700;
+    bottom: 2rem;
+}

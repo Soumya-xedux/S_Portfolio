@@ -1,0 +1,863 @@
+{
+  "about": {
+    "name": "Soumya Ranjan Sahoo",
+    "bio": "Aspiring full-stack developer with a passion for creating innovative solutions. Skilled in JavaScript, Python, and React. Currently exploring automation and AI",
+    "profile": "about/Profile.png",
+    "location": "Bangalore, India"
+  },
+  "projects": [
+    {
+      "id": "project-1",
+      "title": "Infinite Scroller",
+      "description": "Social media-style infinite scrolling feed with dynamic loading",
+      "tech": [
+        "React",
+        "Intersection Observer API",
+        "Node.js",
+        "MongoDB"
+      ],
+      "category" : "Web Application",
+      "image": "projects/1778513515366-1.5 Acre - 4.png",
+      "liveLink": "https://www.makemytrip.com/",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "Users expect seamless content consumption without pagination interruptions.",
+        "architecturalOverview": "Uses Intersection Observer to detect scroll position and trigger batched API calls dynamically.",
+        "solution": "Implemented infinite scrolling with optimized rendering and controlled API requests.",
+        "features": [
+          "Dynamic loading",
+          "Seamless scrolling"
+        ],
+        "challenges": [
+          {
+            "problem": "Excess API calls",
+            "solution": "Debounce and threshold-based triggering"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-2",
+      "title": "Smart Pagination",
+      "description": "Offset vs cursor-based pagination with performance comparison",
+      "tech": [
+        "React",
+        "Node.js",
+        "PostgreSQL"
+      ],
+      "category" : "Web Application",
+      "image": "projects/SmartPaginationSystem.png",
+      "liveLink": "https://www.makemytrip.com/",
+      "githubLink": "#",
+      "status": "In Progress",
+      "details": {
+        "problemStatement": "Traditional pagination breaks at scale and causes performance issues.",
+        "architecturalOverview": "Backend supports offset and cursor pagination with performance comparison layer.",
+        "solution": "Implemented cursor-based pagination for large datasets.",
+        "features": [
+          "Offset vs cursor",
+          "Performance comparison"
+        ],
+        "challenges": [
+          {
+            "problem": "Slow queries",
+            "solution": "Cursor-based approach"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-3",
+      "title": "Lazy Load Gallery",
+      "description": "Image gallery with lazy loading and viewport detection",
+      "tech": [
+        "React",
+        "Intersection Observer API",
+        "Cloudinary"
+      ],
+      "category" : "Web Application",
+      "image": "projects/LazyLoadingGallery.png",
+      "liveLink": "https://www.makemytrip.com/",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "Loading all images upfront slows down page performance.",
+        "architecturalOverview": "Images load only when visible using Intersection Observer.",
+        "solution": "Implemented lazy loading with placeholders.",
+        "features": [
+          "Viewport loading",
+          "Optimized images"
+        ],
+        "challenges": [
+          {
+            "problem": "Heavy load",
+            "solution": "Deferred loading"
+          },
+          {
+            "problem": "unnecessary resource loading ",
+            "solution": "paginated load"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-4",
+      "title": "Prefetch Navigator",
+      "description": "Preload next pages for instant navigation experience",
+      "tech": [
+        "Next.js",
+        "React Query"
+      ],
+      "category" : "Web Application",
+      "image": "projects/PrefetchNavigator.png",
+      "liveLink": "https://www.makemytrip.com/",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "Users face delays when navigating between pages.",
+        "architecturalOverview": "Prefetch next route data using React Query cache.",
+        "solution": "Preloaded pages in background.",
+        "features": [
+          "Prefetching",
+          "Fast navigation"
+        ],
+        "challenges": [
+          {
+            "problem": "Navigation delay",
+            "solution": "Background prefetch"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-5",
+      "title": "Browser Cache Lab",
+      "description": "Experiment with cache-control, ETag, and service worker caching",
+      "tech": [
+        "Node.js",
+        "Express",
+        "Service Workers"
+      ],
+      "category" : "Web Application",
+      "image": "projects/BrowserCacheLab.png",
+      "liveLink": "https://react.dev/learn",
+      "githubLink": "#",
+      "status": "Completed",
+      "details": {
+        "problemStatement": "Improper caching leads to slow load times and redundant API calls.",
+        "architecturalOverview": "Uses HTTP headers and service workers for caching strategies.",
+        "solution": "Implemented cache-control, ETag validation, and SW caching.",
+        "features": [
+          "ETag",
+          "Service worker caching"
+        ],
+        "challenges": [
+          {
+            "problem": "Repeated calls",
+            "solution": "Cache validation"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-6",
+      "title": "Asset Optimizer",
+      "description": "Optimize images, fonts, and assets for performance",
+      "tech": [
+        "Next.js",
+        "CDN",
+        "Image Optimization"
+      ],
+      "category" : "Web Application",
+      "image": "projects/AssetOptimizer.png",
+      "liveLink": "https://react.dev/learn",
+      "githubLink": "#",
+      "status": "In Progress",
+      "details": {
+        "problemStatement": "Unoptimized assets degrade performance and SEO rankings.",
+        "architecturalOverview": "Assets processed and served via CDN.",
+        "solution": "Compression + CDN delivery.",
+        "features": [
+          "Image optimization",
+          "CDN caching"
+        ],
+        "challenges": [
+          {
+            "problem": "Large assets",
+            "solution": "Compression"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-7",
+      "title": "Debounce & Throttle UI",
+      "description": "Optimize search and input-heavy UI interactions",
+      "tech": [
+        "React",
+        "Lodash"
+      ],
+      "category" : "Web Application",
+      "image": "projects/Debounce&ThrottleUI.png",
+      "liveLink": "https://youtube.com/",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "Frequent API calls degrade performance and user experience.",
+        "architecturalOverview": "Input events controlled using debounce/throttle.",
+        "solution": "Reduced unnecessary API calls.",
+        "features": [
+          "Debounce",
+          "Throttle"
+        ],
+        "challenges": [
+          {
+            "problem": "API overload",
+            "solution": "Event control"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-9",
+      "title": "Real-time Sync App",
+      "description": "Live updates using WebSockets",
+      "tech": [
+        "React",
+        "Node.js",
+        "Socket.io"
+      ],
+      "category" : "Web Application",
+      "image": "projects/Real-timeSyncApp.png",
+      "liveLink": "https://react.dev/learn",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "Users need real-time updates without refreshing the page.",
+        "architecturalOverview": "WebSocket-based real-time communication.",
+        "solution": "Implemented Socket.io.",
+        "features": [
+          "Live sync",
+          "Real-time updates"
+        ],
+        "challenges": [
+          {
+            "problem": "Latency",
+            "solution": "WebSockets"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-10",
+      "title": "Offline First App",
+      "description": "PWA that works offline with background sync",
+      "tech": [
+        "React",
+        "Service Workers",
+        "IndexedDB"
+      ],
+      "category" : "Web Application",
+      "image": "projects/OfflineFirstApp.png",
+      "liveLink": "https://react.dev/learn",
+      "githubLink": "#",
+      "status": "In Progress",
+      "details": {
+        "problemStatement": "Applications fail when internet connectivity is lost.",
+        "architecturalOverview": "Service workers + IndexedDB for offline storage.",
+        "solution": "Offline-first architecture.",
+        "features": [
+          "Offline mode",
+          "Background sync"
+        ],
+        "challenges": [
+          {
+            "problem": "No internet",
+            "solution": "Local storage + sync"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-11",
+      "title": "Request Queue Manager",
+      "description": "Queue system for async request handling with priority",
+      "tech": [
+        "Node.js",
+        "Redis"
+      ],
+      "category" : "Web Application",
+      "image": "projects/RequestQueueManager.png",
+      "liveLink": "https://www.makemytrip.com/",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "High concurrent requests can overload the system.",
+        "architecturalOverview": "Queue system with Redis for task scheduling.",
+        "solution": "Implemented priority queue.",
+        "features": [
+          "Queueing",
+          "Priority handling"
+        ],
+        "challenges": [
+          {
+            "problem": "System overload",
+            "solution": "Queue system"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-12",
+      "title": "Global State Engine",
+      "description": "Custom global state management system",
+      "tech": [
+        "React",
+        "Context API"
+      ],
+      "category" : "Web Application",
+      "image": "projects/GlobalStateEngine.png",
+      "liveLink": "https://www.makemytrip.com/",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "Managing shared state across components becomes complex.",
+        "architecturalOverview": "Custom state engine using Context API.",
+        "solution": "Centralized state handling.",
+        "features": [
+          "Global state",
+          "Context-based"
+        ],
+        "challenges": [
+          {
+            "problem": "State complexity",
+            "solution": "Central store"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-13",
+      "title": "Cache Sync Layer",
+      "description": "Client-side caching with background revalidation",
+      "tech": [
+        "React Query",
+        "REST API"
+      ],
+      "category" : "Web Application",
+      "image": "projects/CacheSyncLayer.png",
+      "liveLink": "https://www.makemytrip.com/",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "Repeated API calls slow down applications.",
+        "architecturalOverview": "Cache + background revalidation.",
+        "solution": "React Query caching.",
+        "features": [
+          "Caching",
+          "Revalidation"
+        ],
+        "challenges": [
+          {
+            "problem": "Duplicate calls",
+            "solution": "Cache layer"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-14",
+      "title": "Auth Flow System",
+      "description": "JWT auth with refresh tokens and protected routes",
+      "tech": [
+        "Node.js",
+        "Express",
+        "JWT",
+        "React"
+      ],
+      "category" : "Web Application",
+      "image": "projects/Auth-Flow-System.png",
+      "liveLink": "https://react.dev/learn",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "Secure authentication is complex to implement correctly.",
+        "architecturalOverview": "JWT + refresh token flow.",
+        "solution": "Secure login system.",
+        "features": [
+          "JWT auth",
+          "Protected routes"
+        ],
+        "challenges": [
+          {
+            "problem": "Security issues",
+            "solution": "Token validation"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-15",
+      "title": "Rate Limiter API",
+      "description": "API protection using rate limiting",
+      "tech": [
+        "Node.js",
+        "Express",
+        "Redis"
+      ],
+      "category" : "Web Application",
+      "image": "projects/RateLimiterAPI.png",
+      "liveLink": "https://react.dev/learn",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "APIs are vulnerable to abuse and excessive traffic.",
+        "architecturalOverview": "Redis-based rate limiter.",
+        "solution": "Request throttling.",
+        "features": [
+          "Rate limiting"
+        ],
+        "challenges": [
+          {
+            "problem": "Abuse",
+            "solution": "Throttle requests"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-16",
+      "title": "CSR Playground",
+      "description": "Client-side rendering demo with performance insights",
+      "tech": [
+        "React",
+        "Vite"
+      ],
+      "category" : "Web Application",
+      "image": "projects/CSR-Playground.png",
+      "liveLink": "https://www.makemytrip.com/",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "CSR impacts SEO and initial load performance.",
+        "architecturalOverview": "Pure CSR rendering setup.",
+        "solution": "Analyzed CSR behavior.",
+        "features": [
+          "CSR demo"
+        ],
+        "challenges": [
+          {
+            "problem": "SEO issues",
+            "solution": "SSR comparison"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-17",
+      "title": "SSR Engine",
+      "description": "Server-side rendering with hydration",
+      "tech": [
+        "Next.js"
+      ],
+      "category" : "Web Application",
+      "image": "projects/SSR-Engine.png",
+      "liveLink": "https://www.makemytrip.com/",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "CSR alone is not optimal for SEO and performance.",
+        "architecturalOverview": "SSR with hydration.",
+        "solution": "Server rendering.",
+        "features": [
+          "SSR"
+        ],
+        "challenges": [
+          {
+            "problem": "SEO",
+            "solution": "Server rendering"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-18",
+      "title": "Static Boost (SSG)",
+      "description": "Static site generation with build-time optimization",
+      "tech": [
+        "Next.js"
+      ],
+      "category" : "Web Application",
+      "image": "projects/StaticBoost.png",
+      "liveLink": "#",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "Dynamic rendering is unnecessary for static content.",
+        "architecturalOverview": "SSG build-time generation.",
+        "solution": "Static pages.",
+        "features": [
+          "SSG"
+        ],
+        "challenges": [
+          {
+            "problem": "Over-rendering",
+            "solution": "Static generation"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-19",
+      "title": "Hybrid Renderer",
+      "description": "Combination of CSR, SSR, and ISR strategies",
+      "tech": [
+        "Next.js"
+      ],
+      "category" : "Web Application",
+      "image": "projects/HybridRendering.png",
+      "liveLink": "https://react.dev/learn",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "Different pages require different rendering strategies.",
+        "architecturalOverview": "Hybrid rendering (CSR + SSR + ISR).",
+        "solution": "Mixed rendering strategy.",
+        "features": [
+          "Hybrid rendering"
+        ],
+        "challenges": [
+          {
+            "problem": "Strategy selection",
+            "solution": "Dynamic approach"
+          }
+        ]
+      }
+    },
+    {
+      "id": "project-20",
+      "title": "Code Splitting Studio",
+      "description": "Dynamic imports and bundle optimization",
+      "tech": [
+        "React",
+        "Webpack"
+      ],
+      "category" : "Web Application",
+      "image": "projects/CodeSplittingStudio.png",
+      "liveLink": "https://react.dev/learn",
+      "githubLink": "#",
+      "status": "Upcoming",
+      "details": {
+        "problemStatement": "Large bundles increase load time and hurt performance.",
+        "architecturalOverview": "Dynamic imports with Webpack.",
+        "solution": "Split bundles.",
+        "features": [
+          "Code splitting"
+        ],
+        "challenges": [
+          {
+            "problem": "Large bundles",
+            "solution": "Lazy loading"
+          }
+        ]
+      }
+    }
+  ],
+  "experience": [
+    {
+      "id": "exp-5",
+      "logo": "experience/1778600399146-ImageNotAvailable.png",
+      "company": "Personal Projects & Freelance",
+      "role": "Full Stack Web Developer",
+      "duration": "Feb 2026 - Present",
+      "experienceLength": "1+ yrs",
+      "employmentType": "Freelance",
+      "current_company": "yes",
+      "location": "Remote",
+      "details": [
+        "Designed and developed responsive portfolio and dashboard interfaces.",
+        "Built modern cyberpunk-inspired UI components using React and CSS modules.",
+        "Worked on API integration, reusable components and UI animations."
+      ],
+      "tech": [
+        "React.js",
+        "JavaScript",
+        "CSS Modules",
+        "HTML",
+        "Node.js",
+        "REST APIs",
+        "GitHub"
+      ]
+    },
+    {
+      "id": "exp-4",
+      "logo": "experience/1778599343645-crio.do.avif",
+      "company": "Crio.do",
+      "role": "Full Stack Development Trainee",
+      "duration": "Nov 2023 - May 2026",
+      "experienceLength": "Current",
+      "employmentType": "Training Program",
+      "current_company": "yes",
+      "location": "Remote",
+      "details": [
+        "Building full stack MERN applications with production-level architecture.",
+        "Working on frontend development, backend APIs and database integration.",
+        "Strengthening DSA, React.js and system design skills."
+      ],
+      "tech": [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "JavaScript",
+        "REST APIs",
+        "Git",
+        "HTML",
+        "CSS"
+      ]
+    },
+    {
+      "id": "exp-3",
+      "logo": "experience/MAQ-logo.webp",
+      "company": "MAQ Software",
+      "role": "Software Engineer - II",
+      "duration": "Mar 2025 - June 2025",
+      "experienceLength": "4 mos",
+      "employmentType": "Full Time",
+      "current_company": "no",
+      "location": "Hyderabad, Telangana, India",
+      "details": [
+        "Led enterprise Power BI reporting optimization initiatives.",
+        "Improved dashboard responsiveness using DAX and semantic model optimization.",
+        "Collaborated with cross-functional teams to improve reporting scalability and reliability."
+      ],
+      "tech": [
+        "Power BI",
+        "DAX",
+        "SSRS",
+        "Report Builder",
+        "SAP BI",
+        "SQL"
+      ]
+    },
+    {
+      "id": "exp-2",
+      "logo": "experience/MAQ-logo.webp",
+      "company": "MAQ Software",
+      "role": "Software Engineer - I",
+      "duration": "Oct 2022 - Feb 2025",
+      "experienceLength": "2.4 yrs",
+      "employmentType": "Full Time",
+      "current_company": "no",
+      "location": "Noida & Hyderabad, India",
+      "details": [
+        "Worked as Power BI report developer for enterprise analytics solutions.",
+        "Migrated SAP BOBJ and Tableau reports into Power BI dashboards.",
+        "Optimized SQL queries and dataset refresh pipelines for performance improvement."
+      ],
+      "tech": [
+        "Power BI",
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "React.js",
+        "DAX",
+        "M Query",
+        "SQL",
+        "Tableau",
+        "Presto",
+        "SAP BI",
+        "MS Fabric"
+      ]
+    },
+    {
+      "id": "exp-1",
+      "logo": "experience/1778599717031-LITlogo.jpg",
+      "company": "Lakshya Institute of Technology",
+      "role": "Academic Associate (Part-Time)",
+      "duration": "Jul 2022 - Sep 2022",
+      "experienceLength": "2 mos",
+      "employmentType": "Part Time",
+      "current_company": "no",
+      "location": "Bhubaneswar, Odisha, India",
+      "details": [
+        "Mentored undergraduate students in core computer science subjects.",
+        "Conducted doubt-clearing sessions and assignment guidance.",
+        "Assisted students with practical and programming concepts."
+      ],
+      "tech": [
+        "C",
+        "C++",
+        "Data Structures",
+        "DBMS",
+        "Operating Systems",
+        "Computer Fundamentals"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "2",
+      "icon": "Laptop",
+      "glow": "cyan",
+      "institute": "Crio.do",
+      "title": "Full Stack Development",
+      "duration": "2024 - 2026",
+      "location": "Remote",
+      "cgpa": "A+",
+      "type": "",
+      "points": [
+        "Learning full stack technologies",
+        "Building real-world projects"
+      ],
+      "skills": [],
+      "logo": "uploads/education/1778667895560-crio.do.avif"
+    },
+    {
+      "id": "1",
+      "icon": "GraduationCap",
+      "glow": "cyan",
+      "institute": "Lakshya Institute of Technology, Bhubaneswar",
+      "title": "Bachelor of Science in Computer Science",
+      "duration": "2019 - 2022",
+      "location": "Bhubaneswar, Odisha, India",
+      "cgpa": "8.48",
+      "type": "",
+      "points": [
+        "CGPA: 8.48 / 10.0",
+        "Secured 6stars🌟 in HackerRank Problem Solving"
+      ],
+      "skills": [],
+      "logo": "uploads/education/1778667106231-LITlogo.jpg"
+    },
+    {
+      "id": "education-1778671299281",
+      "icon": "",
+      "glow": "",
+      "institute": "Dhenkanal H.S School, Dhenkanal",
+      "title": "Council of Higher Secondary Education, Odisha",
+      "duration": "2017 - 2019",
+      "location": "Dhenkanal, Odisha",
+      "cgpa": "",
+      "type": "Full Time",
+      "points": [
+        "Best scorer in Math"
+      ],
+      "skills": [],
+      "logo": ""
+    },
+    {
+      "id": "education-1778671197544",
+      "icon": "",
+      "glow": "",
+      "institute": "Jameswar High School",
+      "title": "Board of Secondary Education, Odisha",
+      "duration": "2016 - 2017",
+      "location": "Anlajhari",
+      "cgpa": "",
+      "type": "Full Time",
+      "points": [],
+      "skills": [],
+      "logo": ""
+    }
+  ],
+"certifications": [
+  {
+    "id": "cert-1",
+    "title": "",
+    "issuer": "Udemy",
+    "date": "2024",
+    "certificateId": "ABC123",
+    "credentialId": "ABC123",
+    "certificateLink": "#",
+    "verifyLink": "#",
+    "skills": [],
+    "level": "Intermediate",
+    "status": "completed",
+    "description": "",
+    "glow": "cyan",
+    "logo": "certification-image/issuer/udemy.jpg"
+  },
+  {
+    "id": "cert-2",
+    "title": "",
+    "issuer": "Udemy",
+    "date": "2024",
+    "certificateId": "ABC123",
+    "credentialId": "ABC123",
+    "certificateLink": "#",
+    "verifyLink": "#",
+    "skills": [],
+    "level": "Intermediate",
+    "status": "completed",
+    "description": "",
+    "glow": "pink",
+    "logo": "certification-image/issuer/udemy.jpg"
+  },
+  {
+    "id": "cert-3",
+    "title": "",
+    "issuer": "Udemy",
+    "date": "2024",
+    "certificateId": "ABC123",
+    "credentialId": "ABC123",
+    "certificateLink": "#",
+    "verifyLink": "#",
+    "skills": [],
+    "level": "Intermediate",
+    "status": "completed",
+    "description": "",
+    "glow": "cyan",
+    "logo": "certification-image/issuer/udemy.jpg"
+  },
+  {
+    "id": "cert-4",
+    "title": "",
+    "issuer": "Udemy",
+    "date": "2024",
+    "certificateId": "ABC123",
+    "credentialId": "ABC123",
+    "certificateLink": "#",
+    "verifyLink": "#",
+    "skills": [],
+    "level": "Intermediate",
+    "status": "completed",
+    "description": "",
+    "glow": "pink",
+    "logo": "certification-image/issuer/udemy.jpg"
+  }
+],
+  "skills": [
+    {
+      "id": "skill-1",
+      "name": "JavaScript",
+      "image": "skills/js.png",
+      "category": "Frontend"
+    },
+    {
+      "id": "skill-2",
+      "name": "React",
+      "image": "skills/react.png",
+      "category": "Frontend"
+    },
+    {
+      "id": "skill-3",
+      "name": "Node.js",
+      "image": "skills/nodeJS.png",
+      "category": "Backend"
+    },
+    {
+      "id": "skill-4",
+      "name": "Python",
+      "image": "skills/python.jpg",
+      "category": "Backend"
+    },
+    {
+      "id": "skill-5",
+      "name": "Power Automate",
+      "image": "skills/power-automate.png",
+      "category": "Frontend"
+    }
+  ]
+}

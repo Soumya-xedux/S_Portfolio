@@ -1,0 +1,386 @@
+/* ===== MAIN LAYOUT ===== */
+.container {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 260px 1fr 360px;
+  gap: 20px;
+  height: 100%;
+  padding: 20px;
+  background: #020617;
+  color: white;
+  overflow: hidden;
+}
+.container > * {
+  min-height: 0;
+}
+
+/* ===== SCROLL ===== */
+.sidebar,
+.preview,
+.formScroll {
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.scroll {
+  overflow-y: auto;
+  flex: 1;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #00f5ff55;
+  border-radius: 10px;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  background: linear-gradient(#020617, #020617) padding-box,
+              linear-gradient(180deg,#ff4ecd,#00f5ff) border-box;
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.sidebarHeader h3 {
+  font-size: 16px;
+}
+
+.sidebarHeader button {
+  background: linear-gradient(90deg,#00f5ff,#ff4ecd);
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+}
+
+.modal {
+  width: 400px;
+  background: #020617;
+  border-radius: 18px;
+  padding: 20px;
+
+  border: 1px solid #00f5ff55;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.deleteBtn {
+  background: #ff4d4f;
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+
+/* ===== PROJECT ITEM ===== */
+.item {
+  display: flex;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+  border: 1px solid transparent;
+}
+
+.item img {
+  width: 60px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item:hover {
+  background: #00f5ff11;
+}
+
+.active {
+  border: 1px solid #00f5ff;
+  background: #00f5ff22;
+  box-shadow: 0 0 12px #00f5ff33;
+}
+
+.item h4 {
+  font-size: 14px;
+}
+
+.item span {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+/* ===== CENTER FORM ===== */
+.formWrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formScroll {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+}
+
+/* ===== TOP ACTIONS ===== */
+.topActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.topActions button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.discardBtn {
+  border: 1px solid #99a5a7;
+  background-color: #99a5a7;
+  color: black;
+  font-weight: 500;
+}
+
+.previewBtn {
+  border: 1px solid #00f5ff;
+  color: #00f5ff;
+}
+
+.saveBtn {
+  background: linear-gradient(90deg,#00f5ff,#ff4ecd);
+  border: none;
+  color: white;
+  font-weight: 600;
+}
+
+/* ===== CARD ===== */
+.card {
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 15px;
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#020617, #020617) padding-box,
+    linear-gradient(120deg,#00f5ff,#ff4ecd) border-box;
+
+  box-shadow: 0 0 20px #00000055;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: #00f5ff;
+}
+
+/* ===== ROW ===== */
+.row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.flexGrow {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ===== GRID ===== */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+/* ===== INPUT ===== */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 10px;
+  background: #020617;
+  border: 1px solid #ffffff22;
+  border-radius: 10px;
+  color: white;
+  outline: none;
+  font-size: 13px;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #00f5ff;
+  box-shadow: 0 0 6px #00f5ff44;
+}
+
+textarea {
+  min-height: 80px;
+  resize: none;
+}
+
+/* ===== IMAGE BOX ===== */
+.imageBox {
+  position: relative;
+}
+
+.imageBox img {
+  width: 160px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.imageBox button {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: #000000aa;
+  border: 1px solid #ffffff22;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+}
+
+/* ===== TAGS ===== */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tags span {
+  background: #00f5ff11;
+  border: 1px solid #00f5ff55;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.tags span:hover {
+  background: #ff4ecd22;
+}
+
+/* ===== ADD ROW ===== */
+.addRow {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.addRow button {
+  background: linear-gradient(90deg,#00f5ff,#ff4ecd);
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ===== FEATURES ===== */
+.row button {
+  background: #ff4ecd;
+  border: none;
+  border-radius: 6px;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+/* ===== CHALLENGES ===== */
+.challengeRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* ===== PREVIEW PANEL ===== */
+.preview {
+  border-radius: 16px;
+  padding: 16px;
+
+  border: 1px solid transparent;
+  background:
+    linear-gradient(#020617, #020617) padding-box,
+    linear-gradient(120deg,#00f5ff,#ff4ecd) border-box;
+}
+
+.preview h2 {
+  color: #00f5ff;
+  margin: 8px 0;
+}
+
+.preview p {
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+.preview img {
+  width: 100%;
+  border-radius: 12px;
+  margin: 10px 0;
+  border: 1px solid #00f5ff99;
+}
+
+.badge {
+  font-size: 12px;
+  background: #00f5ff22;
+  padding: 4px 10px;
+  border-radius: 10px;
+}
+
+.previewBtns {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  margin-bottom: 12px;
+}
+
+.previewBtns button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.previewBtns button:first-child {
+  background: #00f5ff;
+  color: black;
+}
+
+.previewBtns button:last-child {
+  background: #ff4ecd;
+  color: white;
+}

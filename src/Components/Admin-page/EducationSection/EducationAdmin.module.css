@@ -1,0 +1,674 @@
+/* ================= PAGE ================= */
+
+.container{
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    gap: 18px;
+
+    padding: 12px;
+
+    background: #020617;
+
+    color: white;
+
+    overflow: hidden;
+}
+/* Show Modal */
+/* MODAL OVERLAY */
+
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+  backdrop-filter: blur(4px);
+}
+
+/* MODAL BOX */
+
+.modal {
+  width: 100%;
+  max-width: 450px;
+
+  background: #ffffff;
+  border-radius: 20px;
+
+  padding: 28px;
+
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  animation: popup 0.2s ease;
+}
+
+/* TITLE */
+
+.modal h2 {
+  margin: 0;
+
+  font-size: 24px;
+  font-weight: 700;
+
+  color: #111827;
+}
+
+/* INPUTS */
+
+.modal input {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+
+  font-size: 15px;
+
+  outline: none;
+
+  transition: 0.2s ease;
+}
+
+.modal input:focus {
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* ACTION BUTTONS */
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  margin-top: 8px;
+}
+
+.modalActions button {
+  border: none;
+
+  padding: 12px 18px;
+
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+/* CANCEL */
+
+.modalActions button:first-child {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.modalActions button:first-child:hover {
+  background: #d1d5db;
+}
+
+/* CREATE */
+
+.modalActions button:last-child {
+  background: #2563eb;
+  color: white;
+}
+
+.modalActions button:last-child:hover {
+  background: #1d4ed8;
+}
+
+/* ANIMATION */
+
+@keyframes popup {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+/* ================= LEFT PANEL ================= */
+
+.leftPanel{
+    width: 290px;
+    min-width: 290px;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 14px;
+
+    border-radius: 16px;
+
+    border: 1px solid rgba(0,245,255,0.4);
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0,245,255,0.03),
+        rgba(255,0,140,0.03)
+      );
+
+    box-shadow:
+      inset 0 0 18px rgba(0,245,255,0.04);
+}
+
+.leftHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 16px;
+}
+
+.leftHeader h2{
+    font-size: 1rem;
+    font-weight: 600;
+
+    color: white;
+}
+
+.addButton{
+    border: none;
+
+    padding: 8px 14px;
+
+    border-radius: 10px;
+
+    font-size: 0.85rem;
+
+    color: white;
+
+    cursor: pointer;
+
+    background:
+      linear-gradient(
+        90deg,
+        #00f5ff,
+        #ff4ecd
+      );
+
+    transition: 0.25s ease;
+}
+
+.addButton:hover{
+    transform: translateY(-1px);
+}
+
+.educationList{
+    flex: 1;
+
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    padding-right: 4px;
+
+    scrollbar-width: thin;
+    scrollbar-color: #00f5ff transparent;
+}
+
+/* ================= EDUCATION CARD ================= */
+
+.educationCard{
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(255,255,255,0.08);
+
+    background: rgba(255,255,255,0.02);
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.educationCard:hover{
+    border: 1px solid rgba(0,245,255,0.45);
+
+    transform: translateY(-1px);
+}
+
+.activeCard{
+    border: 1px solid #00f5ff;
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,245,255,0.08),
+        rgba(255,0,140,0.04)
+      );
+
+    box-shadow:
+      0 0 16px rgba(0,245,255,0.15);
+}
+
+.educationCard img{
+    width: 58px;
+    height: 58px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    background: white;
+}
+
+.educationCard h3{
+    font-size: 0.92rem;
+    font-weight: 600;
+
+    line-height: 1.25rem;
+
+    margin-bottom: 4px;
+
+    color: white;
+}
+
+.educationCard p{
+    font-size: 0.78rem;
+
+    color: #d6d6d6;
+
+    margin-bottom: 4px;
+}
+
+.educationCard span{
+    font-size: 0.72rem;
+
+    color: #9ca3af;
+}
+
+/* ================= RIGHT PANEL ================= */
+
+.rightPanel{
+    flex: 1;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    border-radius: 16px;
+
+    padding: 14px;
+
+    border: 1px solid rgba(0,245,255,0.35);
+
+    background:
+      linear-gradient(
+        90deg,
+        rgba(0,245,255,0.03),
+        rgba(255,0,140,0.03)
+      );
+
+    
+
+    scrollbar-width: thin;
+    scrollbar-color: #00f5ff transparent;
+}
+
+/* ================= TOP ACTIONS ================= */
+
+.topActions{
+    display: flex;
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+}
+
+.topActions button{
+    border: none;
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.topActions button:hover{
+    transform: translateY(-1px);
+}
+
+.deleteButton{
+    background: #ff4d4f;
+    color: white;
+}
+
+.previewButton{
+    color: #00f5ff;
+
+    border: 1px solid #00f5ff !important;
+
+    background: transparent;
+}
+
+.saveButton{
+    color: white;
+
+    background:
+      linear-gradient(
+        90deg,
+        #00f5ff,
+        #ff4ecd
+      );
+}
+
+/* ================= FORM ================= */
+
+.formContainer{
+  overflow-y: auto;
+    border-radius: 16px;
+
+    padding: 18px;
+
+    border: 1px solid rgba(255,0,140,0.45);
+
+    background: rgba(0,0,0,0.18);
+
+    box-shadow:
+      inset 0 0 20px rgba(0,245,255,0.03);
+}
+
+.formContainer h2{
+    font-size: 1rem;
+    font-weight: 600;
+
+    color: #00f5ff;
+
+    margin-bottom: 18px;
+}
+
+/* ================= GRID ================= */
+
+.formGrid{
+    display: flex;
+
+    gap: 22px;
+
+    margin-bottom: 18px;
+}
+
+/* ================= LOGO ================= */
+
+.logoSection{
+    width: 170px;
+}
+
+.logoSection label{
+    display: block;
+
+    font-size: 0.8rem;
+
+    margin-bottom: 8px;
+}
+
+.logoUploadArea{
+    border-radius: 14px;
+
+    padding: 10px;
+
+    border: 1px dashed rgba(255,255,255,0.18);
+
+    background: rgba(255,255,255,0.02);
+
+    text-align: center;
+}
+
+.logoUploadArea img{
+    width: 100px;
+    height: 100px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    background: white;
+
+    margin-bottom: 12px;
+}
+
+.changeLogoButton{
+    display: inline-block;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    color: white;
+
+    background:
+      linear-gradient(
+        90deg,
+        #ff4ecd,
+        #c850ff
+      );
+}
+
+/* ================= INPUTS ================= */
+
+.fieldsSection{
+    flex: 1;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 14px;
+}
+
+.inputGroup{
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+.inputGroup label{
+    font-size: 0.78rem;
+
+    color: #d8d8d8;
+}
+
+.inputGroup input,
+.inputGroup select,
+.highlightSection textarea,
+.addSkillRow input{
+    width: 100%;
+
+    padding: 11px 14px;
+
+    border-radius: 10px;
+
+    border: 1px solid rgba(255,255,255,0.10);
+
+    background: rgba(255,255,255,0.02);
+
+    color: white;
+
+    outline: none;
+
+    font-size: 0.82rem;
+
+    transition: 0.25s ease;
+}
+
+.inputGroup input:focus,
+.inputGroup select:focus,
+.highlightSection textarea:focus,
+.addSkillRow input:focus{
+    border: 1px solid rgba(0,245,255,0.55);
+
+    box-shadow:
+      0 0 10px rgba(0,245,255,0.08);
+}
+
+/* ================= DESCRIPTION ================= */
+
+.highlightSection{
+    margin-bottom: 18px;
+}
+
+.highlightSection label{
+    display: block;
+
+    font-size: 0.8rem;
+
+    margin-bottom: 8px;
+}
+
+.highlightSection textarea{
+    resize: none;
+
+    min-height: 120px;
+
+    line-height: 1.5rem;
+}
+
+/* ================= SKILLS ================= */
+
+.skillsSection label{
+    display: block;
+
+    font-size: 0.8rem;
+
+    margin-bottom: 10px;
+}
+
+.skillsContainer{
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+}
+
+.skillPill{
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 12px;
+
+    border-radius: 999px;
+
+    font-size: 0.72rem;
+
+    color: #00f5ff;
+
+    border: 1px solid rgba(0,245,255,0.35);
+
+    background: rgba(0,245,255,0.04);
+
+    transition: 0.25s ease;
+}
+
+.skillPill:hover{
+    box-shadow:
+      0 0 10px rgba(0,245,255,0.10);
+}
+
+.skillPill span{
+    cursor: pointer;
+}
+
+/* ================= ADD SKILL ================= */
+
+.addSkillRow{
+    display: flex;
+
+    gap: 10px;
+}
+
+.addSkillRow button{
+    border: none;
+
+    padding: 0 18px;
+
+    border-radius: 10px;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+
+    color: white;
+
+    cursor: pointer;
+
+    background:
+      linear-gradient(
+        90deg,
+        #00f5ff,
+        #ff4ecd
+      );
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 1100px){
+
+    .container{
+        flex-direction: column;
+    }
+
+    .leftPanel{
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .formGrid{
+        flex-direction: column;
+    }
+
+    .fieldsSection{
+        grid-template-columns: 1fr;
+    }
+
+    .logoSection{
+        width: 100%;
+    }
+}
