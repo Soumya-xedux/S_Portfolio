@@ -150,24 +150,51 @@ app.put("/about", verifyAdmin, (req, res) => {
 
 /* ---------- The Fixed Upload Route ---------- */
 app.post("/upload", verifyAdmin, (req, res) => {
-  // We wrap the middleware to catch errors and log them
   upload.single("image")(req, res, (err) => {
+    // Multer-specific errors
     if (err instanceof multer.MulterError) {
       console.error("Multer Error:", err);
-      return res.status(400).json({ error: err.message });
-    } else if (err) {
-      console.error("Unknown Upload Error:", err);
-      return res.status(400).json({ error: err.message });
+
+      let message = err.message;
+
+      if (err.code === "LIMIT_FILE_SIZE") {
+        message = "Image size must be less than 5MB";
+      }
+
+      return res.status(400).json({
+        success: false,
+        error: message,
+      });
     }
 
+    // Custom / unknown upload errors
+    if (err) {
+      console.error("Upload Error:", err);
+
+      return res.status(400).json({
+        success: false,
+        error: err.message || "Image upload failed",
+      });
+    }
+
+    // No file uploaded
     if (!req.file) {
-      console.error("No file found in request. Check if key is 'image'");
-      return res.status(400).json({ error: "No file uploaded" });
+      console.error("No file found in request");
+
+      return res.status(400).json({
+        success: false,
+        error: "No image uploaded",
+      });
     }
 
-    console.log("File Saved Successfully:", req.file.filename);
-    res.json({
+    console.log("File Saved Successfully:", req.file.path);
+
+    return res.status(200).json({
+      success: true,
+
       path: req.file.path,
+
+      filename: req.file.filename || req.file.public_id,
     });
   });
 });
