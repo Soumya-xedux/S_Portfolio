@@ -1,15 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./ProjectsAdmin.module.css";
 import { uploadImage } from "../../../api/special";
-import { API_BASE } from "../../../config/api";
 import {
   getSection,
   createItem,
   updateItem,
   deleteItem,
 } from "../../../api/crud";
-
-const BASE = `${API_BASE}/uploads/`;
 
 export const ProjectsAdmin = () => {
   const [projects, setProjects] = useState([]);
@@ -56,10 +53,9 @@ export const ProjectsAdmin = () => {
     try {
       const res = await uploadImage(file, "projects");
 
-      const imagePath = res.path.replace(`${API_BASE}/uploads/`, "");
       setSelected((prev) => ({
         ...prev,
-        image: imagePath,
+        image: res.path,
       }));
     } catch (err) {
       console.log(err);
@@ -190,7 +186,6 @@ export const ProjectsAdmin = () => {
         projects={projects}
         selected={selected}
         setSelected={setSelected}
-        BASE={BASE}
         onAdd={() => setShowModal(true)}
       />
 
@@ -277,7 +272,7 @@ const TopActions = ({ onSave, onDiscard, onPreview, onDelete }) => {
   );
 };
 
-const Sidebar = ({ projects, selected, setSelected, BASE, onAdd }) => {
+const Sidebar = ({ projects, selected, setSelected, onAdd }) => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebarHeader}>
@@ -295,7 +290,7 @@ const Sidebar = ({ projects, selected, setSelected, BASE, onAdd }) => {
             onClick={() => setSelected(p)}
           >
             <img
-              src={p.image ? BASE + p.image : "https://placehold.co/120x120"}
+              src={p.image || "https://placehold.co/120x120"}
               alt={p.title}
             />
             <div>
@@ -382,11 +377,7 @@ const BasicInfo = ({ selected, handleChange, handleImageUpload }) => {
         <div className={styles.imageBox}>
           <h3 style={{ color: "white", fontSize: "12px" }}>Project Image</h3>
           <img
-            src={
-              selected.image
-                ? BASE + selected.image
-                : "https://placehold.co/120x120"
-            }
+            src={selected.image || "https://placehold.co/120x120"}
             alt={selected.title}
           />
           <input
@@ -573,11 +564,7 @@ const PreviewPanel = ({ selected }) => {
       <p>{selected.description}</p>
 
       <img
-        src={
-          selected.image
-            ? BASE + selected.image
-            : "https://placehold.co/120x120"
-        }
+        src={selected.image || "https://placehold.co/120x120"}
         alt={selected.title}
       />
 
