@@ -21,6 +21,15 @@ import {
   Award,
 } from "lucide-react"; // for certification section
 
+// for Skill section
+import {
+  Code2,
+  Monitor,
+  Database,
+  Wrench,
+} from "lucide-react"; 
+
+
 import certificationStyles from "./Styles/Certifications.module.css";
 import skillStyles from "./Styles/Skills.module.css";
 
@@ -38,6 +47,11 @@ const iconMap = {
   GraduationCap,
   Laptop,
   UserRound,
+};
+const categoryIcons = {
+  Frontend: Monitor,
+  Backend: Database,
+  "Tools & Others": Wrench,
 };
 
 export const Content = () => {
@@ -543,38 +557,147 @@ export const CertificationCard = ({
 
 // Skills
 export const Skills = ({ displayData }) => {
-  const uniqueCategories = [...new Set(displayData.map((s) => s.category))];
+  const uniqueCategories = [
+    ...new Set(displayData.map((s) => s.category)),
+  ];
 
   return (
     <div className={skillStyles["skills-section"]}>
-      <div className={skillStyles.heading}>Skills</div>
-      <div className={skillStyles.content}>
+      {/* Heading */}
+
+      <div className={skillStyles["heading-wrapper"]}>
+        <Code2
+          size={38}
+          className={skillStyles["heading-icon"]}
+        />
+
+        <div>
+          <h1 className={skillStyles["heading"]}>
+            My <span>Skills</span>
+          </h1>
+
+          <p className={skillStyles["subheading"]}>
+            A diverse set of technologies I use
+            to build modern and scalable
+            applications.
+          </p>
+        </div>
+      </div>
+
+      {/* Categories */}
+
+      <div className={skillStyles["content"]}>
         {uniqueCategories.map((category) => {
-          const logos = displayData
-            .filter((skill) => skill.category === category)
-            .map((skill) => skill.image);
+          const skills = displayData.filter(
+            (skill) =>
+              skill.category === category
+          );
+
+          const Icon =
+            categoryIcons[category] || Wrench;
+
           return (
-            <SkillsCard key={category} category={category} logos={logos} />
+            <div
+              key={category}
+              className={
+                skillStyles["category-block"]
+              }
+            >
+              {/* Category Header */}
+
+              <div
+                className={
+                  skillStyles["category-header"]
+                }
+              >
+                <div
+                  className={
+                    skillStyles[
+                      "category-icon-wrapper"
+                    ]
+                  }
+                >
+                  <Icon
+                    size={28}
+                    className={
+                      skillStyles[
+                        "category-icon"
+                      ]
+                    }
+                  />
+                </div>
+
+                <div
+                  className={
+                    skillStyles[
+                      "category-title-wrapper"
+                    ]
+                  }
+                >
+                  <h2
+                    className={
+                      skillStyles[
+                        "category-title"
+                      ]
+                    }
+                  >
+                    {category}
+                  </h2>
+
+                  <div
+                    className={
+                      skillStyles[
+                        "category-line"
+                      ]
+                    }
+                  ></div>
+                </div>
+              </div>
+
+              {/* Skills Grid */}
+
+              <div
+                className={
+                  skillStyles["skills-grid"]
+                }
+              >
+                {skills.map((skill) => (
+                  <SkillCard
+                    key={skill.id}
+                    title={skill.title}
+                    image={skill.image}
+                  />
+                ))}
+              </div>
+            </div>
           );
         })}
       </div>
     </div>
   );
 };
-export const SkillsCard = ({ category, logos }) => {
+
+export const SkillCard = ({
+  title,
+  image,
+}) => {
   return (
-    <div className={skillcardStyles["skills-card"]}>
-      <div className={skillcardStyles["category"]}>{category}</div>
-      <div className={skillcardStyles["logos"]}>
-        {logos.map((logo, index) => (
-          <img
-            className={skillcardStyles["logo"]}
-            key={index}
-            src={logo}
-            alt={category}
-          />
-        ))}
-      </div>
+    <div className={skillcardStyles["skill-card"]}>
+      <img
+        src={image}
+        alt={title}
+        className={
+          skillcardStyles["skill-logo"]
+        }
+      />
+
+      <span
+        className={
+          skillcardStyles["skill-title"]
+        }
+      >
+        {title}
+      </span>
     </div>
   );
 };
