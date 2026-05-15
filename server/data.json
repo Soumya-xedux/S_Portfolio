@@ -2,7 +2,7 @@
   "about": {
     "name": "Soumya Ranjan Sahoo",
     "bio": "Aspiring full-stack developer with a passion for creating innovative solutions. Skilled in JavaScript, Python, and React. Currently exploring automation and AI",
-    "profile": "about/Profile.png",
+    "profile": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856070/about/tdoexm49vfdl9q8ne8nq.png",
     "location": "Bangalore, India"
   },
   "projects": [
@@ -16,8 +16,8 @@
         "Node.js",
         "MongoDB"
       ],
-      "category" : "Web Application",
-      "image": "projects/1778513515366-1.5 Acre - 4.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856097/projects/it6txyqq5oaazg7zng61.png",
       "liveLink": "https://www.makemytrip.com/",
       "githubLink": "#",
       "status": "Upcoming",
@@ -46,8 +46,8 @@
         "Node.js",
         "PostgreSQL"
       ],
-      "category" : "Web Application",
-      "image": "projects/SmartPaginationSystem.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856117/projects/rgg8s2piiknxbngr3vh6.png",
       "liveLink": "https://www.makemytrip.com/",
       "githubLink": "#",
       "status": "In Progress",
@@ -76,8 +76,8 @@
         "Intersection Observer API",
         "Cloudinary"
       ],
-      "category" : "Web Application",
-      "image": "projects/LazyLoadingGallery.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856138/projects/bx0otrpaayocfxbmnnga.png",
       "liveLink": "https://www.makemytrip.com/",
       "githubLink": "#",
       "status": "Upcoming",
@@ -109,8 +109,8 @@
         "Next.js",
         "React Query"
       ],
-      "category" : "Web Application",
-      "image": "projects/PrefetchNavigator.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856262/projects/sqbnrox1dnyuaj7lzc5o.png",
       "liveLink": "https://www.makemytrip.com/",
       "githubLink": "#",
       "status": "Upcoming",
@@ -139,8 +139,8 @@
         "Express",
         "Service Workers"
       ],
-      "category" : "Web Application",
-      "image": "projects/BrowserCacheLab.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856307/projects/qte1a5aiyzpqsm1zgofa.png",
       "liveLink": "https://react.dev/learn",
       "githubLink": "#",
       "status": "Completed",
@@ -169,8 +169,8 @@
         "CDN",
         "Image Optimization"
       ],
-      "category" : "Web Application",
-      "image": "projects/AssetOptimizer.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856322/projects/xxtko3cytbxsghde3c5g.png",
       "liveLink": "https://react.dev/learn",
       "githubLink": "#",
       "status": "In Progress",
@@ -198,8 +198,8 @@
         "React",
         "Lodash"
       ],
-      "category" : "Web Application",
-      "image": "projects/Debounce&ThrottleUI.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856357/projects/oavmjiyw9isjg3cfk9nu.png",
       "liveLink": "https://youtube.com/",
       "githubLink": "#",
       "status": "Upcoming",
@@ -228,8 +228,8 @@
         "Node.js",
         "Socket.io"
       ],
-      "category" : "Web Application",
-      "image": "projects/Real-timeSyncApp.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856376/projects/a3vcrwmqn1soqo5yahbd.png",
       "liveLink": "https://react.dev/learn",
       "githubLink": "#",
       "status": "Upcoming",
@@ -258,8 +258,8 @@
         "Service Workers",
         "IndexedDB"
       ],
-      "category" : "Web Application",
-      "image": "projects/OfflineFirstApp.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856394/projects/iol8iloxxrl48etsurk3.png",
       "liveLink": "https://react.dev/learn",
       "githubLink": "#",
       "status": "In Progress",
@@ -287,8 +287,8 @@
         "Node.js",
         "Redis"
       ],
-      "category" : "Web Application",
-      "image": "projects/RequestQueueManager.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856414/projects/pkeawuzovr23hzv2zpww.png",
       "liveLink": "https://www.makemytrip.com/",
       "githubLink": "#",
       "status": "Upcoming",
@@ -316,8 +316,8 @@
         "React",
         "Context API"
       ],
-      "category" : "Web Application",
-      "image": "projects/GlobalStateEngine.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856432/projects/gkmmzmv3isqhd9mlmmzb.png",
       "liveLink": "https://www.makemytrip.com/",
       "githubLink": "#",
       "status": "Upcoming",
@@ -345,8 +345,8 @@
         "React Query",
         "REST API"
       ],
-      "category" : "Web Application",
-      "image": "projects/CacheSyncLayer.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856448/projects/hzj2qrjyvtbqclojpdvu.png",
       "liveLink": "https://www.makemytrip.com/",
       "githubLink": "#",
       "status": "Upcoming",
@@ -376,8 +376,8 @@
         "JWT",
         "React"
       ],
-      "category" : "Web Application",
-      "image": "projects/Auth-Flow-System.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856465/projects/jumj4mh2pj4t0ckjdm49.png",
       "liveLink": "https://react.dev/learn",
       "githubLink": "#",
       "status": "Upcoming",
@@ -406,8 +406,8 @@
         "Express",
         "Redis"
       ],
-      "category" : "Web Application",
-      "image": "projects/RateLimiterAPI.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856482/projects/hhnvi5lhbipl4nigw6nc.png",
       "liveLink": "https://react.dev/learn",
       "githubLink": "#",
       "status": "Upcoming",
@@ -434,8 +434,8 @@
         "React",
         "Vite"
       ],
-      "category" : "Web Application",
-      "image": "projects/CSR-Playground.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856501/projects/ztwqqpeu0wlsdahp8ybv.png",
       "liveLink": "https://www.makemytrip.com/",
       "githubLink": "#",
       "status": "Upcoming",
@@ -461,8 +461,8 @@
       "tech": [
         "Next.js"
       ],
-      "category" : "Web Application",
-      "image": "projects/SSR-Engine.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856519/projects/wzljygi1jjflkn1y1kb4.png",
       "liveLink": "https://www.makemytrip.com/",
       "githubLink": "#",
       "status": "Upcoming",
@@ -488,8 +488,8 @@
       "tech": [
         "Next.js"
       ],
-      "category" : "Web Application",
-      "image": "projects/StaticBoost.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856533/projects/lnn7atcl3r9fxza2ws9n.png",
       "liveLink": "#",
       "githubLink": "#",
       "status": "Upcoming",
@@ -515,8 +515,8 @@
       "tech": [
         "Next.js"
       ],
-      "category" : "Web Application",
-      "image": "projects/HybridRendering.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856550/projects/dwkar3vlberh9cocqwrk.png",
       "liveLink": "https://react.dev/learn",
       "githubLink": "#",
       "status": "Upcoming",
@@ -543,8 +543,8 @@
         "React",
         "Webpack"
       ],
-      "category" : "Web Application",
-      "image": "projects/CodeSplittingStudio.png",
+      "category": "Web Application",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856565/projects/mm9q7pnzjhioiswxhlbg.png",
       "liveLink": "https://react.dev/learn",
       "githubLink": "#",
       "status": "Upcoming",
@@ -567,7 +567,7 @@
   "experience": [
     {
       "id": "exp-5",
-      "logo": "experience/1778600399146-ImageNotAvailable.png",
+      "logo": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856605/experience/abyycrmjbozqiqhmdbhv.png",
       "company": "Personal Projects & Freelance",
       "role": "Full Stack Web Developer",
       "duration": "Feb 2026 - Present",
@@ -762,72 +762,72 @@
       "logo": ""
     }
   ],
-"certifications": [
-  {
-    "id": "cert-1",
-    "title": "",
-    "issuer": "Udemy",
-    "date": "2024",
-    "certificateId": "ABC123",
-    "credentialId": "ABC123",
-    "certificateLink": "#",
-    "verifyLink": "#",
-    "skills": [],
-    "level": "Intermediate",
-    "status": "completed",
-    "description": "",
-    "glow": "cyan",
-    "logo": "certification-image/issuer/udemy.jpg"
-  },
-  {
-    "id": "cert-2",
-    "title": "",
-    "issuer": "Udemy",
-    "date": "2024",
-    "certificateId": "ABC123",
-    "credentialId": "ABC123",
-    "certificateLink": "#",
-    "verifyLink": "#",
-    "skills": [],
-    "level": "Intermediate",
-    "status": "completed",
-    "description": "",
-    "glow": "pink",
-    "logo": "certification-image/issuer/udemy.jpg"
-  },
-  {
-    "id": "cert-3",
-    "title": "",
-    "issuer": "Udemy",
-    "date": "2024",
-    "certificateId": "ABC123",
-    "credentialId": "ABC123",
-    "certificateLink": "#",
-    "verifyLink": "#",
-    "skills": [],
-    "level": "Intermediate",
-    "status": "completed",
-    "description": "",
-    "glow": "cyan",
-    "logo": "certification-image/issuer/udemy.jpg"
-  },
-  {
-    "id": "cert-4",
-    "title": "",
-    "issuer": "Udemy",
-    "date": "2024",
-    "certificateId": "ABC123",
-    "credentialId": "ABC123",
-    "certificateLink": "#",
-    "verifyLink": "#",
-    "skills": [],
-    "level": "Intermediate",
-    "status": "completed",
-    "description": "",
-    "glow": "pink",
-    "logo": "certification-image/issuer/udemy.jpg"
-  }
-],
+  "certifications": [
+    {
+      "id": "cert-1",
+      "title": "",
+      "issuer": "Udemy",
+      "date": "2024",
+      "certificateId": "ABC123",
+      "credentialId": "ABC123",
+      "certificateLink": "#",
+      "verifyLink": "#",
+      "skills": [],
+      "level": "Intermediate",
+      "status": "completed",
+      "description": "",
+      "glow": "cyan",
+      "logo": "certification-image/issuer/udemy.jpg"
+    },
+    {
+      "id": "cert-2",
+      "title": "",
+      "issuer": "Udemy",
+      "date": "2024",
+      "certificateId": "ABC123",
+      "credentialId": "ABC123",
+      "certificateLink": "#",
+      "verifyLink": "#",
+      "skills": [],
+      "level": "Intermediate",
+      "status": "completed",
+      "description": "",
+      "glow": "pink",
+      "logo": "certification-image/issuer/udemy.jpg"
+    },
+    {
+      "id": "cert-3",
+      "title": "",
+      "issuer": "Udemy",
+      "date": "2024",
+      "certificateId": "ABC123",
+      "credentialId": "ABC123",
+      "certificateLink": "#",
+      "verifyLink": "#",
+      "skills": [],
+      "level": "Intermediate",
+      "status": "completed",
+      "description": "",
+      "glow": "cyan",
+      "logo": "certification-image/issuer/udemy.jpg"
+    },
+    {
+      "id": "cert-4",
+      "title": "",
+      "issuer": "Udemy",
+      "date": "2024",
+      "certificateId": "ABC123",
+      "credentialId": "ABC123",
+      "certificateLink": "#",
+      "verifyLink": "#",
+      "skills": [],
+      "level": "Intermediate",
+      "status": "completed",
+      "description": "",
+      "glow": "pink",
+      "logo": "certification-image/issuer/udemy.jpg"
+    }
+  ],
   "skills": [
     {
       "id": "skill-1",
