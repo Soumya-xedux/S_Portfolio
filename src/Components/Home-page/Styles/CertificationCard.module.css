@@ -1,70 +1,65 @@
-
-
-/* CARD */
-
 .certification-card {
   position: relative;
 
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
 
-  min-height: 255px;
+  gap: 24px;
 
-  padding: 26px;
+  min-height: 190px;
 
-  border-radius: 28px;
+  padding: 28px;
+
+  border-radius: 24px;
 
   background:
     linear-gradient(
       145deg,
-      rgba(4, 10, 28, 0.96),
+      rgba(4, 10, 28, 0.97),
       rgba(2, 7, 24, 0.98)
     );
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
   overflow: hidden;
 
   transition: 0.3s ease;
 
-  border: 1px solid rgba(0, 255, 255, 0.12);
-
   backdrop-filter: blur(10px);
 }
 
 .certification-card:hover {
-  transform: translateY(-6px) scale(1.015);
+  transform: translateY(-4px);
 }
 
-/* GLOW VARIANTS */
+/* GLOW */
 
 .certification-card-cyan {
   box-shadow:
-    0 0 18px rgba(0, 255, 255, 0.18),
-    inset 0 0 18px rgba(0, 255, 255, 0.04);
+    0 0 15px rgba(0, 255, 255, 0.12);
 }
 
 .certification-card-pink {
   box-shadow:
-    0 0 18px rgba(255, 0, 255, 0.16),
-    inset 0 0 18px rgba(255, 0, 255, 0.04);
+    0 0 15px rgba(255, 0, 255, 0.12);
 }
 
-/* TOP SECTION */
+/* LEFT */
 
-.top-section {
+.left-section {
   display: flex;
-  gap: 22px;
+  align-items: center;
+  justify-content: center;
 }
-
-/* LOGO */
 
 .logo-container {
-  width: 110px;
-  height: 110px;
+  width: 115px;
+  height: 115px;
 
-  min-width: 110px;
+  min-width: 115px;
 
-  border-radius: 24px;
+  border-radius: 22px;
 
   overflow: hidden;
 
@@ -84,9 +79,9 @@
   padding: 12px;
 }
 
-/* DETAILS */
+/* CENTER */
 
-.details {
+.center-section {
   flex: 1;
 
   display: flex;
@@ -95,7 +90,8 @@
 }
 
 .title {
-  font-size: 1.55rem;
+  font-size: 1.7rem;
+
   font-weight: 700;
 
   line-height: 1.3;
@@ -106,102 +102,127 @@
 }
 
 .issuer {
-  font-size: 1.35rem;
+  font-size: 1.3rem;
+
   font-weight: 700;
 
   color: #00f5ff;
 
-  margin-bottom: 16px;
+  margin-bottom: 18px;
 }
-
-/* META */
 
 .meta {
   display: flex;
   flex-wrap: wrap;
 
-  gap: 16px;
+  gap: 18px;
 
   color: #cbd5e1;
 
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .meta span {
   display: flex;
   align-items: center;
-  gap: 6px;
+
+  gap: 8px;
+}
+
+/* RIGHT */
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+
+  min-height: 120px;
+}
+
+.verify-icon {
+  color: #00ffb3;
+
+  background: rgba(0, 255, 179, 0.08);
+
+  padding: 10px;
+
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow:
+    0 0 18px rgba(0, 255, 179, 0.15);
 }
 
 /* BUTTON */
 
-.actions {
-  display: flex;
-  justify-content: flex-end;
-
-  margin-top: 30px;
-}
-
 .view-certificate-button {
   border: none;
 
-  padding: 14px 24px;
+  padding: 12px 20px;
 
-  border-radius: 16px;
+  border-radius: 14px;
 
-  background:
-    linear-gradient(
-      135deg,
-      #00d9ff,
-      #8b5cf6
-    );
+  background: transparent;
+
+  border: 1px solid rgba(255,255,255,0.18);
 
   color: white;
 
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 0.95rem;
+  font-weight: 600;
 
   cursor: pointer;
 
-  transition: 0.25s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
-  box-shadow:
-    0 0 18px rgba(0, 217, 255, 0.28);
+  transition: 0.3s ease;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,245,255,0.12),
+      rgba(255,78,205,0.12)
+    );
 }
 
 .view-certificate-button:hover {
-  transform: scale(1.05);
+  transform: translateY(-2px);
+
+  border-color: #00f5ff;
 
   box-shadow:
-    0 0 25px rgba(0, 217, 255, 0.45);
+    0 0 18px rgba(0,245,255,0.18);
 }
 
-/* SCROLLBAR */
+/* MOBILE */
 
-.certifications-section::-webkit-scrollbar {
-  width: 8px;
-}
+@media (max-width: 768px) {
+  .certification-card {
+    flex-direction: column;
 
-.certifications-section::-webkit-scrollbar-thumb {
-  background: #00f5ff;
-
-  border-radius: 20px;
-}
-
-.certifications-section::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-/* RESPONSIVE */
-
-@media (max-width: 900px) {
-
-  .content {
-    grid-template-columns: 1fr;
+    align-items: flex-start;
   }
 
-  .top-section {
-    flex-direction: column;
+  .right-section {
+    width: 100%;
+
+    flex-direction: row;
+
+    align-items: center;
+  }
+
+  .title {
+    font-size: 1.35rem;
+  }
+
+  .issuer {
+    font-size: 1.1rem;
   }
 
   .logo-container {

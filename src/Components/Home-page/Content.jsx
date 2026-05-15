@@ -12,7 +12,14 @@ import {
   UserRound,
   CalendarDays,
   MapPin,
-} from "lucide-react";
+} from "lucide-react"; // for education section
+
+import {
+  BadgeCheck,
+  ShieldCheck,
+  ExternalLink,
+  Award,
+} from "lucide-react"; // for certification section
 
 import certificationStyles from "./Styles/Certifications.module.css";
 import skillStyles from "./Styles/Skills.module.css";
@@ -189,7 +196,7 @@ export const Projects = ({ displayData }) => {
   );
 };
 
-// Experiences
+
 // Experiences
 export const Experience = ({ data }) => {
   return (
@@ -380,74 +387,154 @@ export const EducationCard = ({ institute, degree, year }) => {
   );
 };
 
-// Certificates
 export const Certifications = ({ displayData }) => {
   return (
     <div className={certificationStyles["certifications-section"]}>
-      <div className={certificationStyles.heading}>Certifications</div>
+      <div className={certificationStyles["heading-wrapper"]}>
+        <Award
+          size={34}
+          className={certificationStyles["heading-icon"]}
+        />
+
+        <div>
+          <div className={certificationStyles.heading}>
+            Certifications
+          </div>
+
+          <div className={certificationStyles["heading-line"]}></div>
+        </div>
+      </div>
+
       <div className={certificationStyles.content}>
         {displayData.map((cert, index) => (
-          <CertificationCard key={cert.id} displayData={cert} index={index} />
+          <CertificationCard
+            key={cert.id}
+            displayData={cert}
+            index={index}
+          />
         ))}
       </div>
     </div>
   );
 };
-export const CertificationCard = ({ displayData, index }) => {
 
-  const glow = index % 2 === 0 ? "cyan" : "pink";
+export const CertificationCard = ({
+  displayData,
+  index,
+}) => {
+  const glow =
+    index % 2 === 0 ? "cyan" : "pink";
 
   return (
     <div
       className={`${certificationCardStyles["certification-card"]} ${
-        certificationCardStyles[`certification-card-${glow}`]
+        certificationCardStyles[
+          `certification-card-${glow}`
+        ]
       }`}
     >
-      {/* TOP */}
+      {/* LEFT */}
 
-      <div className={certificationCardStyles["top-section"]}>
-        {/* LOGO */}
-
-        <div className={certificationCardStyles["logo-container"]}>
+      <div className={certificationCardStyles["left-section"]}>
+        <div
+          className={
+            certificationCardStyles[
+              "logo-container"
+            ]
+          }
+        >
           <img
             src={
-              displayData.logo
-                ? displayData.logo
-                : "https://placehold.co/120x120"
+              displayData.logo ||
+              "https://placehold.co/120x120"
             }
             alt={displayData.issuer}
           />
         </div>
+      </div>
 
-        {/* DETAILS */}
+      {/* CENTER */}
 
-        <div className={certificationCardStyles["details"]}>
-          <h3 className={certificationCardStyles["title"]}>
-            {displayData.title}
-          </h3>
+      <div
+        className={
+          certificationCardStyles[
+            "center-section"
+          ]
+        }
+      >
+        <h3
+          className={
+            certificationCardStyles["title"]
+          }
+        >
+          {displayData.title}
+        </h3>
 
-          <p className={certificationCardStyles["issuer"]}>
-            {displayData.issuer}
-          </p>
+        <p
+          className={
+            certificationCardStyles["issuer"]
+          }
+        >
+          {displayData.issuer}
+        </p>
 
-          <div className={certificationCardStyles["meta"]}>
-            {displayData.date && <span>📅 {displayData.date}</span>}
+        <div
+          className={
+            certificationCardStyles["meta"]
+          }
+        >
+          {displayData.date && (
+            <span>
+              <CalendarDays size={16} />
+              {displayData.date}
+            </span>
+          )}
 
-            {displayData.certificateId && (
-              <span>🎖 {displayData.certificateId}</span>
-            )}
-          </div>
+          {displayData.certificateId && (
+            <span>
+              <BadgeCheck size={16} />
+              Certificate ID:
+              {displayData.certificateId}
+            </span>
+          )}
         </div>
       </div>
 
-      {/* ACTIONS */}
+      {/* RIGHT */}
 
-      <div className={certificationCardStyles["actions"]}>
-        <button
-          className={certificationCardStyles["view-certificate-button"]}
-          onClick={() => window.open(displayData.certificateLink, "_blank")}
+      <div
+        className={
+          certificationCardStyles[
+            "right-section"
+          ]
+        }
+      >
+        <div
+          className={
+            certificationCardStyles[
+              "verify-icon"
+            ]
+          }
         >
-          View Certificate ↗
+          <ShieldCheck size={28} />
+        </div>
+
+        <button
+          className={
+            certificationCardStyles[
+              "view-certificate-button"
+            ]
+          }
+          onClick={() =>
+            window.open(
+              displayData.certificateLink,
+              "_blank"
+            )
+          }
+        >
+          View Certificate
+
+          <ExternalLink size={16} />
         </button>
       </div>
     </div>
