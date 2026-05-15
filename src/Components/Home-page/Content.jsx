@@ -567,7 +567,7 @@ export const Skills = ({ displayData }) => {
 
       <div className={skillStyles["heading-wrapper"]}>
         <Code2
-          size={38}
+          size={30}
           className={skillStyles["heading-icon"]}
         />
 
@@ -664,7 +664,7 @@ export const Skills = ({ displayData }) => {
                 {skills.map((skill) => (
                   <SkillCard
                     key={skill.id}
-                    title={skill.title}
+                    name={skill.name}
                     image={skill.image}
                   />
                 ))}
@@ -678,14 +678,14 @@ export const Skills = ({ displayData }) => {
 };
 
 export const SkillCard = ({
-  title,
+  name,
   image,
 }) => {
   return (
     <div className={skillcardStyles["skill-card"]}>
       <img
         src={image}
-        alt={title}
+        alt={name}
         className={
           skillcardStyles["skill-logo"]
         }
@@ -696,7 +696,7 @@ export const SkillCard = ({
           skillcardStyles["skill-title"]
         }
       >
-        {title}
+        {name}
       </span>
     </div>
   );

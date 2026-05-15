@@ -42,7 +42,7 @@
 }
 
 .heading {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 700;
   color: white;
   text-align: left;
@@ -60,7 +60,7 @@
 
   margin-top: 12px;
 
-  max-width: 340px;
+  max-width: 440px;
 
   line-height: 1.6;
 
@@ -160,11 +160,14 @@
 .skills-grid {
   width: 100%;
 
-  display: grid;
+  display: flex;
 
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  flex-wrap: wrap;
 
   gap: 18px;
+
+  padding-left: 80px;
+
 }
 
 /* Responsive */

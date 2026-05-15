@@ -832,31 +832,31 @@
     {
       "id": "skill-1",
       "name": "JavaScript",
-      "image": "skills/js.png",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778870158/skills/d28nqv5te86whrzo58fm.png",
       "category": "Frontend"
     },
     {
       "id": "skill-2",
       "name": "React",
-      "image": "skills/react.png",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778870253/skills/aig5nvmt101kiwlehk1l.png",
       "category": "Frontend"
     },
     {
       "id": "skill-3",
       "name": "Node.js",
-      "image": "skills/nodeJS.png",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778870265/skills/jl0fip0z6ypeddih9fmg.png",
       "category": "Backend"
     },
     {
       "id": "skill-4",
       "name": "Python",
-      "image": "skills/python.jpg",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778870278/skills/kf1l07hnhvxina423rbj.jpg",
       "category": "Backend"
     },
     {
       "id": "skill-5",
       "name": "Power Automate",
-      "image": "skills/power-automate.png",
+      "image": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778870290/skills/funpitwprmqxbkmckk3z.png",
       "category": "Frontend"
     }
   ]

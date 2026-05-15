@@ -6,6 +6,8 @@ import { AboutContainer } from "../Components/Admin-page/AboutSection/AboutConta
 import { ProjectsAdmin } from "../Components/Admin-page/ProjectsSection/ProjectsAdmin";
 import { ExperienceContainer } from "../Components/Admin-page/ExperienceSection/ExperienceContainer";
 import { EducationAdmin } from "../Components/Admin-page/EducationSection/EducationAdmin";
+import { CertificationsAdmin } from "../Components/Admin-page/CertificationSection/CertificationsAdmin";
+import { SkillsAdmin } from "../Components/Admin-page/SkillSection/SkillsAdmin";
 
 import { signOut } from "firebase/auth";
 
@@ -18,6 +20,8 @@ const SECTION_COMPONENTS = {
   Projects: ProjectsAdmin,
   Experience: ExperienceContainer,
   Education: EducationAdmin,
+  Certifications: CertificationsAdmin,
+  Skills: SkillsAdmin,
 };
 
 const Admin = () => {
