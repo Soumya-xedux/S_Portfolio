@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import { getAllData } from "../../api/special";
-import { API_BASE } from "../../config/api";
 
 import styles from "./Content.module.css";
 import aboutStyles from "./Styles/About.module.css";
@@ -81,12 +80,11 @@ export const Content = () => {
 };
 
 export const About = ({ name, bio, profile, location }) => {
-  const BASE = `${API_BASE}/uploads/`;
 
   return (
     <div
       style={{
-        backgroundImage: `url(${BASE + profile})`,
+        backgroundImage: `url(${profile})`,
         backgroundSize: "100% 100%",
         border: "none",
         borderRadius: "17px",
@@ -226,7 +224,6 @@ export const ExperienceCard = ({
   skills = [],
   glow = "cyan",
 }) => {
-  const BASE = `${API_BASE}/uploads/`;
 
   return (
     <div className={experienceCardStyles["timeline-item"]}>
@@ -247,7 +244,7 @@ export const ExperienceCard = ({
         <div className={experienceCardStyles["top-section"]}>
           {/* Logo */}
           <div className={experienceCardStyles["logo-container"]}>
-            <img src={BASE + logo} alt={company} />
+            <img src={logo} alt={company} />
           </div>
 
           {/* Details */}
@@ -397,7 +394,6 @@ export const Certifications = ({ displayData }) => {
   );
 };
 export const CertificationCard = ({ displayData, index }) => {
-  const BASE = `${API_BASE}/uploads/`;
 
   const glow = index % 2 === 0 ? "cyan" : "pink";
 
@@ -416,7 +412,7 @@ export const CertificationCard = ({ displayData, index }) => {
           <img
             src={
               displayData.logo
-                ? BASE + displayData.logo
+                ? displayData.logo
                 : "https://placehold.co/120x120"
             }
             alt={displayData.issuer}

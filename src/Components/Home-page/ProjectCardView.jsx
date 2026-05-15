@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./Styles/ProjectCardView.module.css";
 import { useNavigate } from "react-router";
 import { Loader } from "../Loader.jsx"
-import { API_BASE } from "../../config/api";
 export const CardView = ({
   id,
   image,
@@ -13,7 +12,6 @@ export const CardView = ({
 }) => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
-  const BASE = `${API_BASE}/uploads/`;
 
   const handleCardClick = (e) => {
     e.stopPropagation();
@@ -30,7 +28,7 @@ export const CardView = ({
       {loading && <Loader/>}
 
       <div className={styles.card} key={id} onClick={handleCardClick}>
-        <img src={BASE + image} alt={title} className={styles.cardImage} />
+        <img src={image} alt={title} className={styles.cardImage} />
         <h3 className={styles.cardTitle}>{title}</h3>
         <p className={styles.cardDescription}>{description}</p>
         <div className={styles.techStack}>

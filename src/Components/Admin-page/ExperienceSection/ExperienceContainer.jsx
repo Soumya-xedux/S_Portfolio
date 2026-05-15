@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./ExperienceContainer.module.css";
 import { uploadImage } from "../../../api/special";
-import { API_BASE } from "../../../config/api";
 import {
   getSection,
   createItem,
@@ -9,7 +8,7 @@ import {
   deleteItem,
 } from "../../../api/crud";
 
-const BASE = `${API_BASE}/uploads/`;
+
 
 export const ExperienceContainer = () => {
   const [experiences, setExperiences] = useState([]);
@@ -59,12 +58,9 @@ export const ExperienceContainer = () => {
     try {
       const res = await uploadImage(file, "experience");
       console.log("STEP 2 RESPONSE:", res);
-
-      const imagePath = res.path.replace(`${API_BASE}/uploads/`, "");
-      console.log("STEP 3 IMAGE PATH:", imagePath);
       setSelected((prev) => ({
         ...prev,
-        logo: imagePath,
+        logo: res.path,
       }));
     } catch (err) {
       console.log(err);
@@ -143,7 +139,6 @@ export const ExperienceContainer = () => {
         experiences={experiences}
         selected={selected}
         setSelected={setSelected}
-        BASE={BASE}
         onAdd={() => setShowModal(true)}
       />
 
@@ -212,7 +207,7 @@ const TopActions = ({ onSave, onDiscard, onPreview, onDelete }) => {
   );
 };
 
-const Sidebar = ({ experiences, selected, setSelected, BASE, onAdd }) => {
+const Sidebar = ({ experiences, selected, setSelected, onAdd }) => {
   return (
     <div className={styles.sidebar}>
       <div className={styles.sidebarHeader}>
@@ -230,7 +225,7 @@ const Sidebar = ({ experiences, selected, setSelected, BASE, onAdd }) => {
             onClick={() => setSelected(p)}
           >
             <img
-              src={p.logo ? BASE + p.logo : "https://placehold.co/120x120"}
+              src={p.logo ? p.logo : "https://placehold.co/120x120"}
               alt="Logo Here"
             />
             <div>
@@ -344,7 +339,7 @@ const BasicInfo = ({ selected, handleChange, handleLogoUpload }) => {
         <div className={styles.imageBox}>
           <h3 style={{ color: "white", fontSize: "12px" }}>Company Logo</h3>
           <img
-              src={selected.logo ? BASE + selected.logo : "https://placehold.co/120x120"}
+              src={selected.logo ? selected.logo : "https://placehold.co/120x120"}
               alt="Logo Here"
             />
           <input

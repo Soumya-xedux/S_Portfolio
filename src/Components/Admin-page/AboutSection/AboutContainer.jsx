@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./AboutContainer.module.css";
-import { API_BASE } from "../../../config/api";
+
+import {
+  getAbout,
+  updateAbout,
+  uploadImage,
+} from "../../../api/special";
 
 export const AboutContainer = () => {
   const [formData, setFormData] = useState({
@@ -10,61 +15,73 @@ export const AboutContainer = () => {
     location: "",
   });
 
-  const BASE = `${API_BASE}`;
-
-  // 🔹 fetch existing data
+  // Fetch existing data
   useEffect(() => {
     const fetchAbout = async () => {
       try {
-        const res = await fetch(`${BASE}/about`);
+        const data = await getAbout();
 
-        if (!res.ok) {
-          throw new Error("Failed to fetch");
-        }
-
-        const data = await res.json();
         setFormData(data);
+
       } catch (err) {
-        console.error(err);
+        console.error(
+          "Failed to fetch about data:",
+          err
+        );
       }
     };
 
     fetchAbout();
-  }, [BASE]);
+  }, []);
 
-  // 🔹 handle input
+  // Handle input
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData((prev) => ({
+      ...prev,
+
+      [e.target.name]: e.target.value,
+    }));
   };
 
-  // 🔹 upload image
+  // Upload image
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
+
     if (!file) return;
-    const fd = new FormData();
-    fd.append("image", file);
 
-    const res = await fetch(`${BASE}/upload`, {
-      method: "POST",
-      body: fd,
-    });
+    try {
+      const data = await uploadImage(
+        file,
+        "about"
+      );
 
-    const data = await res.json();
-    setFormData({
-      ...formData,
-      profile: data.path.replace(BASE + "/uploads/", ""),
-    });
+      setFormData((prev) => ({
+        ...prev,
+
+        profile: data.path,
+      }));
+
+    } catch (err) {
+      console.error(
+        "Image upload failed:",
+        err
+      );
+    }
   };
 
-  // 🔹 save data
+  // Save data
   const handleSave = async () => {
-    await fetch(`${BASE}/about`, {
-      method: "PUT",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    });
+    try {
+      await updateAbout(formData);
 
-    alert("Saved");
+      alert("Saved successfully");
+
+    } catch (err) {
+      console.error(
+        "Failed to save:",
+        err
+      );
+    }
   };
 
   return (
@@ -90,17 +107,24 @@ export const AboutContainer = () => {
         onChange={handleChange}
       />
 
-      <input type="file" onChange={handleImageUpload} />
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleImageUpload}
+      />
 
       {formData.profile && (
         <img
-          src={`${BASE}/uploads/${formData.profile}`}
-          alt="preview"
+          src={formData.profile}
+          alt="Profile Preview"
           width="120"
         />
       )}
 
-      <button className={styles.save} onClick={handleSave}>
+      <button
+        className={styles.save}
+        onClick={handleSave}
+      >
         Save
       </button>
     </div>

@@ -1,13 +1,19 @@
 import { api } from "./client";
 
-export const getAllData = () =>
-  api.get("/data").then(res => res.data);
+export const getAllData = async () => {
+  const res = await api.get("/data");
+  return res.data;
+};
 
-export const getAbout = () =>
-  api.get("/about").then(res => res.data);
+export const getAbout = async () => {
+  const res = await api.get("/about");
+  return res.data;
+};
 
-export const updateAbout = (data) =>
-  api.put("/about", data);
+export const updateAbout = async (data) => {
+  const res = await api.put("/about", data);
+  return res.data;
+};
 
 export const uploadImage = async (file, section) => {
   // Log exactly what we are sending

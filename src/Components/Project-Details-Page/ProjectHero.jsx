@@ -1,15 +1,13 @@
 import styles from "./ProjectHero.module.css";
 import { ProjectMetaCard } from "./ProjectMetaCard";
-import { API_BASE } from "../../config/api";
 
-const BASE = `${API_BASE}/uploads/`;
 
 export const ProjectHero = ({ project }) => {
   return (
     <section className={styles.hero}>
       <img
         className={styles.heroImage}
-        src={BASE + project.image}
+        src={project.image}
         alt={project.title}
       />
       <div className={styles.heroContent}>

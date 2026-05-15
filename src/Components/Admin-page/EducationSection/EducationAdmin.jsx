@@ -9,10 +9,8 @@ import {
 } from "../../../api/crud";
 
 import { uploadImage } from "../../../api/special";
-import { API_BASE } from "../../../config/api";
 
 export const EducationAdmin = () => {
-  const BASE = `${API_BASE}`;
 
   const [skillInput, setSkillInput] = useState("");
 
@@ -165,8 +163,7 @@ export const EducationAdmin = () => {
 
       setSelectedEducation((prev) => ({
         ...prev,
-
-        logo: res.path.replace(`${API_BASE}/`, ""),
+        logo: res.path
       }));
     } catch (err) {
       console.error(err);
@@ -239,7 +236,7 @@ export const EducationAdmin = () => {
               <img
                 src={
                   edu.logo
-                    ? `${BASE}${edu.logo}`
+                    ? `${edu.logo}`
                     : "https://placehold.co/120x120"
                 }
                 alt={edu.institute}
@@ -292,7 +289,7 @@ export const EducationAdmin = () => {
                   <img
                     src={
                       selectedEducation.logo
-                        ? `${BASE}${selectedEducation.logo}`
+                        ? `${selectedEducation.logo}`
                         : "https://placehold.co/120x120"
                     }
                     alt="logo"
