@@ -591,33 +591,6 @@
       ]
     },
     {
-      "id": "exp-4",
-      "logo": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778859131/experience/odnndlgunpctpxfadzge.png",
-      "company": "Crio.do",
-      "role": "Full Stack Development Trainee",
-      "duration": "Nov 2023 - May 2026",
-      "experienceLength": "Current",
-      "employmentType": "Training Program",
-      "current_company": "yes",
-      "location": "Remote",
-      "details": [
-        "Building full stack MERN applications with production-level architecture.",
-        "Working on frontend development, backend APIs and database integration.",
-        "Strengthening DSA, React.js and system design skills."
-      ],
-      "tech": [
-        "React.js",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "JavaScript",
-        "REST APIs",
-        "Git",
-        "HTML",
-        "CSS"
-      ]
-    },
-    {
       "id": "exp-3",
       "logo": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778859411/experience/ruizlipgeklspqzumaol.webp",
       "company": "MAQ Software",
