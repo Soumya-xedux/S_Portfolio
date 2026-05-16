@@ -671,23 +671,6 @@
   ],
   "education": [
     {
-      "id": "2",
-      "icon": "Laptop",
-      "glow": "cyan",
-      "institute": "Crio.do",
-      "title": "Full Stack Development",
-      "duration": "2024 - 2026",
-      "location": "Remote",
-      "cgpa": "A+",
-      "type": "",
-      "points": [
-        "Learning full stack technologies",
-        "Building real-world projects"
-      ],
-      "skills": [],
-      "logo": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778860019/education/an8y8arvisabcwa9fvob.png"
-    },
-    {
       "id": "1",
       "icon": "GraduationCap",
       "glow": "cyan",
@@ -736,6 +719,22 @@
     }
   ],
   "certifications": [
+      {
+      "id": "crio-1",
+      "title": "",
+      "issuer": "Crio.do",
+      "date": "Nov 2024 - May 2026",
+      "certificateId": "ABC123",
+      "credentialId": "ABC123",
+      "certificateLink": "#",
+      "verifyLink": "#",
+      "skills": [],
+      "level": "Intermediate",
+      "status": "completed",
+      "description": "",
+      "glow": "cyan",
+      "logo": "certification-image/issuer/udemy.jpg"
+    },
     {
       "id": "cert-1",
       "title": "",
