@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { getAllData } from "../../api/special";
 
+import { ContentLoader } from "./ContentLoader.jsx";
+
 import styles from "./Content.module.css";
 import aboutStyles from "./Styles/About.module.css";
 import projectStyles from "./Styles/Projects.module.css";
@@ -75,7 +77,10 @@ export const Content = () => {
     fetchAll();
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <ContentLoader />
+  // <div style={{display: "flex", height: "100%", width:"100%",
+  //                                  color: "white", justifyContent: "center",
+  //                                 alignItems:"center"}}>Loading...</div>;
 
   let displayData = data?.[selectedButton?.toLowerCase()] || [];
 
