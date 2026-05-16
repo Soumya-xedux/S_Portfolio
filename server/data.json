@@ -719,21 +719,21 @@
     }
   ],
   "certifications": [
-      {
+    {
       "id": "crio-1",
       "title": "",
       "issuer": "Crio.do",
       "date": "Nov 2024 - May 2026",
-      "certificateId": "ABC123",
+      "certificateId": "",
       "credentialId": "ABC123",
-      "certificateLink": "#",
+      "certificateLink": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778907560/certifications/htu2lynhofrez7tbxlid.jpg",
       "verifyLink": "#",
       "skills": [],
       "level": "Intermediate",
       "status": "completed",
       "description": "",
       "glow": "cyan",
-      "logo": "certification-image/issuer/udemy.jpg"
+      "logo": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778906766/certifications/gyxxe4p636govleeesli.png"
     },
     {
       "id": "cert-1",
@@ -749,22 +749,6 @@
       "status": "completed",
       "description": "",
       "glow": "cyan",
-      "logo": "certification-image/issuer/udemy.jpg"
-    },
-    {
-      "id": "cert-2",
-      "title": "",
-      "issuer": "Udemy",
-      "date": "2024",
-      "certificateId": "ABC123",
-      "credentialId": "ABC123",
-      "certificateLink": "#",
-      "verifyLink": "#",
-      "skills": [],
-      "level": "Intermediate",
-      "status": "completed",
-      "description": "",
-      "glow": "pink",
       "logo": "certification-image/issuer/udemy.jpg"
     },
     {

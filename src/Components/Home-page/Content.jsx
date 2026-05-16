@@ -499,7 +499,7 @@ export const CertificationCard = ({
         >
           {displayData.date && (
             <span>
-              <CalendarDays size={16} />
+              <CalendarDays size={36} />
               {displayData.date}
             </span>
           )}
