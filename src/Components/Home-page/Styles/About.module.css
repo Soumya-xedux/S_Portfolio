@@ -446,8 +446,11 @@
 
   .cardsGrid {
     grid-template-columns: 1fr;
+    gap: 10px;
   }
-
+  .infoCard {
+    width: 100%;
+  }
   .name {
     font-size: 2.8rem;
   }
