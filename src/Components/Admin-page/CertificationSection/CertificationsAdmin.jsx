@@ -9,7 +9,7 @@ import {
   deleteItem,
 } from "../../../api/crud";
 
-import { uploadImage } from "../../../api/special";
+import { uploadImage,deleteImage } from "../../../api/special";
 
 export const CertificationsAdmin = () => {
   const [certifications, setCertifications] = useState([]);
@@ -180,28 +180,55 @@ export const CertificationsAdmin = () => {
   };
 
   // ================= IMAGE =================
-
   const handleLogoUpload = async (e) => {
-    try {
-      const file = e.target.files[0];
+  try {
+    const file = e.target.files[0];
 
-      if (!file) return;
+    if (!file) return;
 
-      const res = await uploadImage(
-        file,
-        "certifications"
-      );
-
-      setSelected((prev) => ({
-        ...prev,
-        logo: res.path,
-      }));
-    } catch (err) {
-      console.error(err);
-
-      alert("Image upload failed");
+    // delete old image
+    if (selected?.logo) {
+      await deleteImage(selected.logo);
     }
-  };
+
+    // upload new image
+    const res = await uploadImage(
+      file,
+      "certifications"
+    );
+
+    setSelected((prev) => ({
+      ...prev,
+      logo: res.path,
+    }));
+  } catch (err) {
+    console.error(err);
+
+    alert("Image upload failed");
+  }
+};
+
+//   const handleLogoUpload = async (e) => {
+//     try {
+//       const file = e.target.files[0];
+
+//       if (!file) return;
+
+//       const res = await uploadImage(
+//         file,
+//         "certifications"
+//       );
+
+//       setSelected((prev) => ({
+//         ...prev,
+//         logo: res.path,
+//       }));
+//     } catch (err) {
+//       console.error(err);
+
+//       alert("Image upload failed");
+//     }
+//   };
 
   // ================= SKILLS =================
 

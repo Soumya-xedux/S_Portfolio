@@ -8,7 +8,7 @@ import {
   deleteItem,
 } from "../../../api/crud";
 
-import { uploadImage } from "../../../api/special";
+import { uploadImage, deleteImage } from "../../../api/special";
 
 export const EducationAdmin = () => {
 
@@ -152,23 +152,50 @@ export const EducationAdmin = () => {
   };
 
   // ================= IMAGE =================
-
   const handleLogoUpload = async (e) => {
-    const file = e.target.files[0];
+  const file = e.target.files[0];
 
-    if (!file) return;
+  if (!file) return;
 
-    try {
-      const res = await uploadImage(file, "education");
-
-      setSelectedEducation((prev) => ({
-        ...prev,
-        logo: res.path
-      }));
-    } catch (err) {
-      console.error(err);
+  try {
+    // delete old image first
+    if (selectedEducation?.logo) {
+      await deleteImage(
+        selectedEducation.logo
+      );
     }
-  };
+
+    // upload new image
+    const res = await uploadImage(
+      file,
+      "education"
+    );
+
+    setSelectedEducation((prev) => ({
+      ...prev,
+      logo: res.path,
+    }));
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+  // const handleLogoUpload = async (e) => {
+  //   const file = e.target.files[0];
+
+  //   if (!file) return;
+
+  //   try {
+  //     const res = await uploadImage(file, "education");
+
+  //     setSelectedEducation((prev) => ({
+  //       ...prev,
+  //       logo: res.path
+  //     }));
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   return (
     <div className={styles.container}>

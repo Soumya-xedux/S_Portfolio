@@ -105,34 +105,103 @@ export const Content = () => {
   );
 };
 
-export const About = ({ name, bio, profile, location }) => {
-
+export const About = ({
+  name,
+  bio,
+  profile,
+  location,
+}) => {
   return (
-    <div
-      style={{
-        backgroundImage: `url(${profile})`,
-        backgroundSize: "100% 100%",
-        border: "none",
-        borderRadius: "17px",
-        overflow: "hidden",
-        backgroundRepeat: "no-repeat",
-        padding: "20px",
-        color: "white",
-        textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)",
-      }}
-      className={aboutStyles.about}
-    >
-      {/* // Abouts */}
-      <div className={aboutStyles.heading}>About</div>
-      {/* Name */}
-      <div className={aboutStyles.content}>
-        <h1 className={aboutStyles.name}>Hi, I'm {name}</h1>
-        <br />
+    <div className={aboutStyles.about}>
+      {/* Background Grid Glow */}
+      <div className={aboutStyles.backgroundGlow}></div>
+
+      {/* LEFT CONTENT */}
+      <div className={aboutStyles.leftSection}>
+        <div className={aboutStyles.smallHeading}>
+          <span className={aboutStyles.dot}></span>
+          ABOUT ME
+        </div>
+
+        <h1 className={aboutStyles.name}>
+          Hi, I’m {name.split(" ")[0]}
+          <br />
+          <span>{name.split(" ").slice(1).join(" ")}</span>
+        </h1>
+
+        <h2 className={aboutStyles.role}>
+          Data Engineer <span>|</span> MERN Stack Developer
+        </h2>
+
         <p className={aboutStyles.bio}>{bio}</p>
-        <br />
-        <br />
-        <br />
-        <p className={aboutStyles.location}>Current Location: {location}</p>
+
+        {/* INFO CARDS */}
+
+        <div className={aboutStyles.cardsGrid}>
+          <div className={aboutStyles.infoCard}>
+            <div className={aboutStyles.iconCircle}>🎯</div>
+
+            <div className={aboutStyles.details}>
+              <h3>Focused On</h3>
+
+              <p>
+                Building scalable web applications
+                & data-driven solutions.
+              </p>
+            </div>
+          </div>
+
+          <div className={aboutStyles.infoCard}>
+            <div className={aboutStyles.iconCircle}>{"</>"}</div>
+
+            <div className={aboutStyles.details}>
+              <h3>Tech Stack</h3>
+
+              <p>
+                JavaScript, Python, React,
+                Node.js, MongoDB, Express,
+                Tailwind CSS, Git
+              </p>
+            </div>
+          </div>
+
+          <div className={aboutStyles.infoCard}>
+            <div className={aboutStyles.iconCircle}>🧠</div>
+
+            <div className={aboutStyles.details}>
+              <h3>Interests</h3>
+
+              <p>
+                AI, Automation, Problem Solving,
+                System Design, Clean Code
+              </p>
+            </div>
+          </div>
+
+          <div className={aboutStyles.infoCard}>
+            <div className={aboutStyles.iconCircle}>📍</div>
+
+            <div className={aboutStyles.details}>
+              <h3>Location</h3>
+
+              <p>{location}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* RIGHT PROFILE */}
+
+      <div className={aboutStyles.rightSection}>
+        <div className={aboutStyles.profileCircle}>
+          <div className={aboutStyles.circleGlow}></div>
+
+          <img
+            src={profile}
+            alt={name}
+            className={aboutStyles.profileImage}
+          />
+        </div>
       </div>
     </div>
   );

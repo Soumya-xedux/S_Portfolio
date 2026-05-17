@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./ExperienceContainer.module.css";
-import { uploadImage } from "../../../api/special";
+import { uploadImage, deleteImage } from "../../../api/special";
 import {
   getSection,
   createItem,
@@ -51,21 +51,53 @@ export const ExperienceContainer = () => {
     setSelected((prev) => ({ ...prev, [field]: value }));
   };
   // ---------- UPLOAD LOGO -----------
-  const handleLogoUpload = async (file) => {
-    console.log("STEP 1 FILE:", file);
-    if (!file) return;
 
-    try {
-      const res = await uploadImage(file, "experience");
-      console.log("STEP 2 RESPONSE:", res);
-      setSelected((prev) => ({
-        ...prev,
-        logo: res.path,
-      }));
-    } catch (err) {
-      console.log(err);
+  const handleLogoUpload = async (file) => {
+  console.log("STEP 1 FILE:", file);
+
+  if (!file) return;
+
+  try {
+    // delete old image
+    if (selected?.logo) {
+      await deleteImage(selected.logo);
     }
-  };
+
+    // upload new image
+    const res = await uploadImage(
+      file,
+      "experience"
+    );
+
+    console.log(
+      "STEP 2 RESPONSE:",
+      res
+    );
+
+    setSelected((prev) => ({
+      ...prev,
+      logo: res.path,
+    }));
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+  // const handleLogoUpload = async (file) => {
+  //   console.log("STEP 1 FILE:", file);
+  //   if (!file) return;
+
+  //   try {
+  //     const res = await uploadImage(file, "experience");
+  //     console.log("STEP 2 RESPONSE:", res);
+  //     setSelected((prev) => ({
+  //       ...prev,
+  //       logo: res.path,
+  //     }));
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   // ---------- TECH ----------
   const addTech = () => {

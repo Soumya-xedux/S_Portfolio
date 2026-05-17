@@ -5,6 +5,7 @@ import {
   getAbout,
   updateAbout,
   uploadImage,
+  deleteImage,
 } from "../../../api/special";
 
 export const AboutContainer = () => {
@@ -44,30 +45,61 @@ export const AboutContainer = () => {
   };
 
   // Upload image
+
   const handleImageUpload = async (e) => {
-    const file = e.target.files[0];
+  const file = e.target.files[0];
 
-    if (!file) return;
+  if (!file) return;
 
-    try {
-      const data = await uploadImage(
-        file,
-        "about"
-      );
-
-      setFormData((prev) => ({
-        ...prev,
-
-        profile: data.path,
-      }));
-
-    } catch (err) {
-      console.error(
-        "Image upload failed:",
-        err
-      );
+  try {
+    // delete old image
+    if (formData?.profile) {
+      await deleteImage(formData.profile);
     }
-  };
+
+    // upload new image
+    const data = await uploadImage(
+      file,
+      "about"
+    );
+
+    setFormData((prev) => ({
+      ...prev,
+
+      profile: data.path,
+    }));
+  } catch (err) {
+    console.error(
+      "Image upload failed:",
+      err
+    );
+  }
+};
+
+  // const handleImageUpload = async (e) => {
+  //   const file = e.target.files[0];
+
+  //   if (!file) return;
+
+  //   try {
+  //     const data = await uploadImage(
+  //       file,
+  //       "about"
+  //     );
+
+  //     setFormData((prev) => ({
+  //       ...prev,
+
+  //       profile: data.path,
+  //     }));
+
+  //   } catch (err) {
+  //     console.error(
+  //       "Image upload failed:",
+  //       err
+  //     );
+  //   }
+  // };
 
   // Save data
   const handleSave = async () => {

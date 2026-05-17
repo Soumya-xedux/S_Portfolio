@@ -9,7 +9,7 @@ import {
   deleteItem,
 } from "../../../api/crud";
 
-import { uploadImage } from "../../../api/special";
+import { uploadImage, deleteImage } from "../../../api/special";
 
 export const SkillsAdmin = () => {
   const [skills, setSkills] = useState([]);
@@ -136,23 +136,51 @@ export const SkillsAdmin = () => {
   // ================= IMAGE =================
 
   const handleImageUpload = async (e) => {
-    try {
-      const file = e.target.files[0];
+  try {
+    const file = e.target.files[0];
 
-      if (!file) return;
+    if (!file) return;
 
-      const res = await uploadImage(file, "skills");
-
-      setSelected((prev) => ({
-        ...prev,
-        image: res.path,
-      }));
-    } catch (err) {
-      console.error(err);
-
-      alert("Image upload failed");
+    // delete old image
+    if (selected?.image) {
+      await deleteImage(selected.image);
     }
-  };
+
+    // upload new image
+    const res = await uploadImage(
+      file,
+      "skills"
+    );
+
+    setSelected((prev) => ({
+      ...prev,
+      image: res.path,
+    }));
+  } catch (err) {
+    console.error(err);
+
+    alert("Image upload failed");
+  }
+};
+
+//   const handleImageUpload = async (e) => {
+//     try {
+//       const file = e.target.files[0];
+
+//       if (!file) return;
+
+//       const res = await uploadImage(file, "skills");
+
+//       setSelected((prev) => ({
+//         ...prev,
+//         image: res.path,
+//       }));
+//     } catch (err) {
+//       console.error(err);
+
+//       alert("Image upload failed");
+//     }
+//   };
 
   if (loading) {
     return <div>Loading...</div>;

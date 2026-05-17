@@ -199,6 +199,42 @@ app.post("/upload", verifyAdmin, (req, res) => {
   });
 });
 
+app.delete("/delete-image", verifyAdmin, async (req, res) => {
+  try {
+    const { imageUrl } = req.body;
+
+    if (!imageUrl) {
+      return res.status(400).json({
+        error: "Image URL required",
+      });
+    }
+
+    // extract public_id
+    const parts = imageUrl.split("/");
+
+    const fileName = parts[parts.length - 1];
+
+    const folder = parts[parts.length - 2];
+
+    const publicId =
+      `${folder}/${fileName.split(".")[0]}`;
+
+    await cloudinary.uploader.destroy(publicId);
+
+    res.json({
+      success: true,
+    });
+  } catch (err) {
+    console.error(err);
+
+    res.status(500).json({
+      error: "Image delete failed",
+    });
+  }
+});
+
+
+
 // Generic CRUD
 app.get("/:section", (req, res) => {
   const db = readDB();

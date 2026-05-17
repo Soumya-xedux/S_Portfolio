@@ -566,31 +566,6 @@
   ],
   "experience": [
     {
-      "id": "exp-5",
-      "logo": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778856605/experience/abyycrmjbozqiqhmdbhv.png",
-      "company": "Personal Projects & Freelance",
-      "role": "Full Stack Web Developer",
-      "duration": "Feb 2026 - Present",
-      "experienceLength": "1+ yrs",
-      "employmentType": "Freelance",
-      "current_company": "yes",
-      "location": "Remote",
-      "details": [
-        "Designed and developed responsive portfolio and dashboard interfaces.",
-        "Built modern cyberpunk-inspired UI components using React and CSS modules.",
-        "Worked on API integration, reusable components and UI animations."
-      ],
-      "tech": [
-        "React.js",
-        "JavaScript",
-        "CSS Modules",
-        "HTML",
-        "Node.js",
-        "REST APIs",
-        "GitHub"
-      ]
-    },
-    {
       "id": "exp-3",
       "logo": "https://res.cloudinary.com/dt3ki35hg/image/upload/v1778859411/experience/ruizlipgeklspqzumaol.webp",
       "company": "MAQ Software",

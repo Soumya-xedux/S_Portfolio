@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import styles from "./ProjectsAdmin.module.css";
-import { uploadImage } from "../../../api/special";
+import { uploadImage, deleteImage, } from "../../../api/special";
 import {
   getSection,
   createItem,
@@ -47,20 +47,45 @@ export const ProjectsAdmin = () => {
   };
 
   // ---------- UPLOAD Image -----------
+
   const handleImageUpload = async (file) => {
-    if (!file) return;
+  if (!file) return;
 
-    try {
-      const res = await uploadImage(file, "projects");
-
-      setSelected((prev) => ({
-        ...prev,
-        image: res.path,
-      }));
-    } catch (err) {
-      console.log(err);
+  try {
+    // delete old image
+    if (selected?.image) {
+      await deleteImage(selected.image);
     }
-  };
+
+    // upload new image
+    const res = await uploadImage(
+      file,
+      "projects"
+    );
+
+    setSelected((prev) => ({
+      ...prev,
+      image: res.path,
+    }));
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+  // const handleImageUpload = async (file) => {
+  //   if (!file) return;
+
+  //   try {
+  //     const res = await uploadImage(file, "projects");
+
+  //     setSelected((prev) => ({
+  //       ...prev,
+  //       image: res.path,
+  //     }));
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   // ---------- TECH ----------
   const addTech = () => {

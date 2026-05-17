@@ -38,3 +38,26 @@ export const uploadImage = async (file, section) => {
     throw error;
   }
 };
+
+export const deleteImage = async (
+  imageUrl
+) => {
+  try {
+    const res = await api.delete(
+      "/delete-image",
+      {
+        data: { imageUrl },
+      }
+    );
+
+    return res.data;
+  } catch (error) {
+    console.error(
+      "special.js: Delete Error:",
+      error.response?.data ||
+        error.message
+    );
+
+    throw error;
+  }
+};
