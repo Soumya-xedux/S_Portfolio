@@ -10,7 +10,7 @@ export const Header = () => {
           fontWeight: "800",
           color:"red",
           position:"absolute",
-          right: "10px",
+          right: "25px",
           bottom: "5px"
         }}>Note* - Currently projects are for demo purpose</span>
     </div>
