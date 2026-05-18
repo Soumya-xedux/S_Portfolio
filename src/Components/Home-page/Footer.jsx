@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Footer.module.css'
 import { Mail, Phone, MessageCircle } from "lucide-react";
+import { FaLinkedin, FaGithub } from "react-icons/fa6";
 
 export const Footer = () => {
   return (
@@ -14,10 +15,10 @@ export const Footer = () => {
             <Phone size={28}/>
           </a>
           <a href="https://www.linkedin.com/in/soumya-ranjan-sahoo02/" target="_blank" rel="noopener noreferrer">
-            Linkedin
+            <FaLinkedin size={28}/>
           </a>
-          <a href="https://github.com/Soumya-xedux" target="_blank" rel="noopener noreferrer">
-            Github
+          <a  href="https://github.com/Soumya-xedux" target="_blank" rel="noopener noreferrer">
+            <FaGithub size={28}/>
           </a>
           <a href="https://wa.me/916370278336" target="_blank" rel="noopener noreferrer">
             <MessageCircle size={28}/>

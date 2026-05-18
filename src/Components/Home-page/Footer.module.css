@@ -15,7 +15,7 @@
     font-weight: 500;
     margin-bottom: 1rem;
     color: aliceblue;
-    text-shadow: 0 0 5px #00f5ff, 0 0 10px #ff4ecd;
+    text-shadow: 0 0 5px #00f5ff99, 0 0 10px #ff4ecd;
 }
 .contacts {
     display: flex;

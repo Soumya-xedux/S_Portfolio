@@ -46,7 +46,7 @@ body,
   border-radius: 1rem;
   border: 2px solid transparent;
   background-image:
-    linear-gradient(#000000cc, #000000cc),
+    linear-gradient(#000000ff, #000000cc),
     linear-gradient(90deg, #00f5ff, #ff4ecd);
   background-origin: border-box;
   background-clip: padding-box, border-box;
@@ -66,15 +66,13 @@ body,
   width: 100%;
 
   border: 2px solid transparent;
-
-  background-image:
-    linear-gradient(#000000cc, #000000cc),
+  background:
+    linear-gradient(#000000, #000000),
     linear-gradient(90deg, #00f5ff, #ff4ecd);
-
-  background-origin: border-box;
+  background-origin: border-box;    /* defines area to paint the background */
   background-clip: padding-box, border-box;
 
-  padding: 20px;
+  padding: 0px;
 }
 
 .footer {

@@ -41,6 +41,6 @@
 
   /* even stronger glow on active */
   box-shadow: 
-    1px 0 4px #00f5ff,
-    0 0 8px #ff4ecd;
+    1px 0 4px #00f5ffcc,
+    0 0 8px #ff4ecdcc;
 }
