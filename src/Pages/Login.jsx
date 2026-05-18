@@ -55,13 +55,17 @@ const Login = () => {
 
   return (
     <div className={styles.page}>
+      
       <div className={styles.container}>
         {/* Glow Background */}
+        <button className={styles.backBtn}
+            onClick={() => navigate("/")}>← Back</button>
         <div className={styles.glow1}></div>
         <div className={styles.glow2}></div>
 
         {/* Login Card */}
         <div className={styles.card}>
+          
           {/* Icon */}
           <div className={styles.iconWrapper}>
             <ShieldCheck
