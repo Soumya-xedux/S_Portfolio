@@ -42,6 +42,7 @@ export const uploadImage = async (file, section) => {
 export const deleteImage = async (
   imageUrl
 ) => {
+  if (!imageUrl) return;
   try {
     const res = await api.delete(
       "/delete-image",

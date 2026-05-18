@@ -5,6 +5,8 @@ const dotenv = require("dotenv");
 const multer = require("multer");
 const connectDB = require("./config/db");
 const Portfolio = require("./models/Portfolio");
+const deleteCloudinaryImage =
+  require("./utils/deleteCloudinaryImage");
 // const path = require("path");
 dotenv.config();
 
@@ -476,6 +478,26 @@ app.delete(
         });
       }
 
+      // Find item before deleting
+      const itemToDelete =
+        existing.data.find(
+          (item) => item.id === id
+        );
+
+      // Detect possible image fields
+      const imageUrl =
+        itemToDelete?.image ||
+        itemToDelete?.logo ||
+        itemToDelete?.profile;
+
+      // Delete image from Cloudinary
+      if (imageUrl) {
+        await deleteCloudinaryImage(
+          imageUrl
+        );
+      }
+
+      // Remove item from DB
       existing.data =
         existing.data.filter(
           (item) => item.id !== id
