@@ -1,11 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
-const fs = require("fs");
+// const fs = require("fs");
 const multer = require("multer");
+const connectDB = require("./config/db");
+const Portfolio = require("./models/Portfolio");
 // const path = require("path");
-
 dotenv.config();
+
+
 
 const app = express();
 app.disable("x-powered-by");
@@ -29,7 +32,7 @@ const verifyAdmin = (req, res, next) => {
   next();
 };
 
-const DB_FILE = "./data.json";
+// const DB_FILE = "./data.json";
 
 // Helper: Logging Middleware to see every request
 app.use((req, res, next) => {
@@ -38,29 +41,29 @@ app.use((req, res, next) => {
 });
 
 /* ---------- Helpers ---------- */
-const readDB = () => {
-  try {
-    return JSON.parse(fs.readFileSync(DB_FILE, "utf-8"));
-  } catch (err) {
-    return {
-      about: {},
+// const readDB = () => {
+//   try {
+//     return JSON.parse(fs.readFileSync(DB_FILE, "utf-8"));
+//   } catch (err) {
+//     return {
+//       about: {},
 
-      projects: [],
+//       projects: [],
 
-      experience: [],
+//       experience: [],
 
-      education: [],
+//       education: [],
 
-      certifications: [],
+//       certifications: [],
 
-      skills: [],
-    };
-  }
-};
+//       skills: [],
+//     };
+//   }
+// };
 
-const writeDB = (data) => {
-  fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
-};
+// const writeDB = (data) => {
+//   fs.writeFileSync(DB_FILE, JSON.stringify(data, null, 2));
+// };
 
 /* ---------- Disk Storage Image Upload Configuration ---------- */
 // const storage = multer.diskStorage({
@@ -131,22 +134,89 @@ app.get("/", (req, res) => {
   });
 });
 
-app.get("/data", (req, res) => {
-  const db = readDB();
-  res.json(db);
+// app.get("/data", (req, res) => {
+//   const db = readDB();
+//   res.json(db);
+// });
+app.get("/data", async (req, res) => {
+  try {
+    const sections =
+      await Portfolio.find();
+
+    const formatted = {};
+
+    sections.forEach((item) => {
+      formatted[item.section] =
+        item.data;
+    });
+
+    res.json(formatted);
+  } catch (err) {
+    console.error(err);
+
+    res.status(500).json({
+      error: "Failed to fetch data",
+    });
+  }
 });
 
-app.get("/about", (req, res) => {
-  const db = readDB();
-  res.json(db.about || {});
+// app.get("/about", (req, res) => {
+//   const db = readDB();
+//   res.json(db.about || {});
+// });
+app.get("/about", async (req, res) => {
+  try {
+    const about =
+      await Portfolio.findOne({
+        section: "about",
+      });
+
+    res.json(about?.data || {});
+  } catch (err) {
+    console.error(err);
+
+    res.status(500).json({
+      error: "Failed to fetch about",
+    });
+  }
 });
 
-app.put("/about", verifyAdmin, (req, res) => {
-  const db = readDB();
-  db.about = req.body;
-  writeDB(db);
-  res.json({ success: true });
-});
+// app.put("/about", verifyAdmin, (req, res) => {
+//   const db = readDB();
+//   db.about = req.body;
+//   writeDB(db);
+//   res.json({ success: true });
+// });
+app.put(
+  "/about",
+  verifyAdmin,
+  async (req, res) => {
+    try {
+      await Portfolio.findOneAndUpdate(
+        {
+          section: "about",
+        },
+        {
+          data: req.body,
+        },
+        {
+          upsert: true,
+          returnDocument: "after"
+        }
+      );
+
+      res.json({
+        success: true,
+      });
+    } catch (err) {
+      console.error(err);
+
+      res.status(500).json({
+        error: "Failed to update about",
+      });
+    }
+  }
+);
 
 /* ---------- The Fixed Upload Route ---------- */
 app.post("/upload", verifyAdmin, (req, res) => {
@@ -236,58 +306,211 @@ app.delete("/delete-image", verifyAdmin, async (req, res) => {
 
 
 // Generic CRUD
-app.get("/:section", (req, res) => {
-  const db = readDB();
-  const { section } = req.params;
-  if (!(section in db))
-    return res.status(404).json({ error: "Invalid section" });
-  res.json(db[section]);
+// app.get("/:section", (req, res) => {
+//   const db = readDB();
+//   const { section } = req.params;
+//   if (!(section in db))
+//     return res.status(404).json({ error: "Invalid section" });
+//   res.json(db[section]);
+// });
+app.get("/:section", async (req, res) => {
+  try {
+    const { section } = req.params;
+
+    const item =
+      await Portfolio.findOne({
+        section,
+      });
+
+    res.json(item?.data || []);
+  } catch (err) {
+    console.error(err);
+
+    res.status(500).json({
+      error: "Fetch failed",
+    });
+  }
 });
 
-app.post("/:section", verifyAdmin, (req, res) => {
-  const db = readDB();
-  const { section } = req.params;
-  if (!Array.isArray(db[section]))
-    return res.status(400).json({ error: "Not a list" });
+// app.post("/:section", verifyAdmin, (req, res) => {
+//   const db = readDB();
+//   const { section } = req.params;
+//   if (!Array.isArray(db[section]))
+//     return res.status(400).json({ error: "Not a list" });
 
-  const newItem = { id: `${section}-${Date.now()}`, ...req.body };
-  db[section].unshift(newItem);
-  writeDB(db);
-  res.json({ success: true, data: newItem });
-});
+//   const newItem = { id: `${section}-${Date.now()}`, ...req.body };
+//   db[section].unshift(newItem);
+//   writeDB(db);
+//   res.json({ success: true, data: newItem });
+// });
+app.post(
+  "/:section",
+  verifyAdmin,
+  async (req, res) => {
+    try {
+      const { section } = req.params;
 
-app.put("/:section/:id", verifyAdmin, (req, res) => {
-  const db = readDB();
-  const { section, id } = req.params;
-  let updated = false;
-  if (!Array.isArray(db[section]))
-    return res.status(400).json({ error: "Not a list" });
+      const existing =
+        await Portfolio.findOne({
+          section,
+        });
 
-  db[section] = db[section].map((item) => {
-    if (item.id === id) {
-      updated = true;
-      return { ...item, ...req.body };
+      const newItem = {
+        id: `${section}-${Date.now()}`,
+        ...req.body,
+      };
+
+      if (!existing) {
+        await Portfolio.create({
+          section,
+          data: [newItem],
+        });
+      } else {
+        existing.data.unshift(newItem);
+
+        await existing.save();
+      }
+
+      res.json({
+        success: true,
+        data: newItem,
+      });
+    } catch (err) {
+      console.error(err);
+
+      res.status(500).json({
+        error: "Create failed",
+      });
     }
-    return item;
-  });
+  }
+);
 
-  if (!updated) return res.status(404).json({ error: "Not found" });
-  writeDB(db);
-  res.json({ success: true });
-});
+// app.put("/:section/:id", verifyAdmin, (req, res) => {
+//   const db = readDB();
+//   const { section, id } = req.params;
+//   let updated = false;
+//   if (!Array.isArray(db[section]))
+//     return res.status(400).json({ error: "Not a list" });
 
-app.delete("/:section/:id", verifyAdmin, (req, res) => {
-  const db = readDB();
-  const { section, id } = req.params;
-  if (!Array.isArray(db[section]))
-    return res.status(400).json({ error: "Not a list" });
-  db[section] = db[section].filter((item) => item.id !== id);
-  writeDB(db);
-  res.json({ success: true });
-});
+//   db[section] = db[section].map((item) => {
+//     if (item.id === id) {
+//       updated = true;
+//       return { ...item, ...req.body };
+//     }
+//     return item;
+//   });
 
+//   if (!updated) return res.status(404).json({ error: "Not found" });
+//   writeDB(db);
+//   res.json({ success: true });
+// });
+app.put(
+  "/:section/:id",
+  verifyAdmin,
+  async (req, res) => {
+    try {
+      const { section, id } =
+        req.params;
+
+      const existing =
+        await Portfolio.findOne({
+          section,
+        });
+
+      if (!existing) {
+        return res.status(404).json({
+          error: "Section not found",
+        });
+      }
+
+      existing.data =
+        existing.data.map((item) =>
+          item.id === id
+            ? {
+                ...item,
+                ...req.body,
+              }
+            : item
+        );
+
+      await existing.save();
+
+      res.json({
+        success: true,
+      });
+    } catch (err) {
+      console.error(err);
+
+      res.status(500).json({
+        error: "Update failed",
+      });
+    }
+  }
+);
+
+// app.delete("/:section/:id", verifyAdmin, (req, res) => {
+//   const db = readDB();
+//   const { section, id } = req.params;
+//   if (!Array.isArray(db[section]))
+//     return res.status(400).json({ error: "Not a list" });
+//   db[section] = db[section].filter((item) => item.id !== id);
+//   writeDB(db);
+//   res.json({ success: true });
+// });
+app.delete(
+  "/:section/:id",
+  verifyAdmin,
+  async (req, res) => {
+    try {
+      const { section, id } =
+        req.params;
+
+      const existing =
+        await Portfolio.findOne({
+          section,
+        });
+
+      if (!existing) {
+        return res.status(404).json({
+          error: "Section not found",
+        });
+      }
+
+      existing.data =
+        existing.data.filter(
+          (item) => item.id !== id
+        );
+
+      await existing.save();
+
+      res.json({
+        success: true,
+      });
+    } catch (err) {
+      console.error(err);
+
+      res.status(500).json({
+        error: "Delete failed",
+      });
+    }
+  }
+);
+
+// const PORT = process.env.PORT || 5000;
+
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+const startServer = async () => {
+  await connectDB();
+
+  app.listen(PORT, () => {
+    console.log(
+      `Server running on port ${PORT}`
+    );
+  });
+};
+
+startServer();
