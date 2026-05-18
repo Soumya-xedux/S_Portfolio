@@ -1,5 +1,5 @@
 import { auth, provider, signInWithPopup } from "../firebase";
-
+import {useState} from "react";
 import { useNavigate } from "react-router-dom";
 
 import styles from "./Login.module.css";
@@ -13,7 +13,15 @@ import {
 
 const Login = () => {
   const navigate = useNavigate();
+  const [userData, setUserData] = useState({email:"", password:""})
 
+  const handleChange = (e) => {
+    setUserData((prev) => ({
+      ...prev,
+
+      [e.target.name]: e.target.value,
+    }));
+  };
   const handleGoogleLogin = async () => {
     try {
       const result = await signInWithPopup(
@@ -81,7 +89,8 @@ const Login = () => {
             <input
               type="text"
               placeholder="Email Address"
-              disabled
+              value={userData.email}
+              onChange={(e) => handleChange(e)}
             />
           </div>
 
@@ -91,7 +100,8 @@ const Login = () => {
             <input
               type="password"
               placeholder="Password"
-              disabled
+              value={userData.password}
+              onChange={(e) => handleChange(e)}
             />
           </div>
 
